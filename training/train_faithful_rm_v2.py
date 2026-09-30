@@ -16,7 +16,7 @@ from tqdm import tqdm
 
 # All paths are configurable via environment variables. WORK_DIR is a
 # writable location for the HF cache, intermediate pairs, and checkpoints.
-REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, os.pardir))
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 WORK_DIR  = os.environ.get("FAITHCONFLICT_WORK_DIR", os.path.join(REPO_ROOT, "workdir"))
 
 LOCAL_HF_HOME = os.environ.get("HF_HOME", os.path.join(WORK_DIR, "hf_cache"))

@@ -19,9 +19,9 @@ MAX_PROMPT_TOKENS = 7900  # hard budget; leaves 292 tokens headroom under max_mo
 _tokenizer = None  # set after LLM loads (model already cached locally)
 
 # WORK_DIR is a writable location for outputs, configurable via environment
-# variable. This should match the WORK_DIR used by ../stage_analysis/
+# variable. This should match the WORK_DIR used by ./
 # experiment1_dpo_isolation_v2.py, which reads this cache back in.
-REPO_ROOT   = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, os.pardir))
+REPO_ROOT   = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 WORK_DIR    = os.environ.get("FAITHCONFLICT_WORK_DIR", os.path.join(REPO_ROOT, "workdir"))
 OUTPUT_FILE = os.path.join(WORK_DIR, "experiment1_data", "safety_classifier_cache.jsonl")
 BATCH_SIZE = 256

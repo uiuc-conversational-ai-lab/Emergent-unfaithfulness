@@ -22,7 +22,7 @@ from tqdm import tqdm
 # ── config ──────────────────────────────────────────────────────────────────
 # All paths are configurable via environment variables. DATA_DIR should point
 # at this repo's data/ folder; WORK_DIR is a writable location for outputs.
-REPO_ROOT   = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, os.pardir))
+REPO_ROOT   = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 DATA_DIR    = os.environ.get("FAITHCONFLICT_DATA_DIR", os.path.join(REPO_ROOT, "data"))
 WORK_DIR    = os.environ.get("FAITHCONFLICT_WORK_DIR", os.path.join(REPO_ROOT, "workdir"))
 

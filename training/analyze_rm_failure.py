@@ -33,7 +33,7 @@ from scipy import stats
 # All paths are configurable via environment variables. RM_DIR defaults to the
 # pre-computed results shipped in ../../results/rm_failure_analysis/, or point
 # it at WORK_DIR to use freshly generated output from experiment_faithconflict_rm.py.
-REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, os.pardir))
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 WORK_DIR  = os.environ.get("FAITHCONFLICT_WORK_DIR", os.path.join(REPO_ROOT, "workdir"))
 RM_DIR  = os.environ.get("FAITHCONFLICT_RM_RESULTS_DIR", os.path.join(REPO_ROOT, "results", "rm_failure_analysis"))
 OUT_DIR = os.path.join(WORK_DIR, "experiment_faithconflict_rm_results")

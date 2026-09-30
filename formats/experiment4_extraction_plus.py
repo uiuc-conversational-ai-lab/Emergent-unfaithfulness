@@ -45,27 +45,38 @@ CAPABILITY = {"factual_counterfactual","math_reasoning","hard_math_reasoning"}
 SUBJECTIVE = {"historical_moral","political_ideological","scientific_frontier"}
 
 MODELS = [
-    {"id":"meta-llama_Llama-3.1-8B-Instruct",              "hf":"meta-llama/Llama-3.1-8B-Instruct",              "tp":2},
-    {"id":"meta-llama_Llama-3.1-70B-Instruct",             "hf":"meta-llama/Llama-3.1-70B-Instruct",             "tp":4},
-    {"id":"allenai_Llama-3.1-Tulu-3-8B-SFT-no-safety-data","hf":"allenai/Llama-3.1-Tulu-3-8B-SFT-no-safety-data","tp":2},
-    {"id":"allenai_Llama-3.1-Tulu-3-8B-SFT",               "hf":"allenai/Llama-3.1-Tulu-3-8B-SFT",               "tp":2},
-    {"id":"allenai_Llama-3.1-Tulu-3-8B-DPO",               "hf":"allenai/Llama-3.1-Tulu-3-8B-DPO",               "tp":2},
-    {"id":"allenai_Llama-3.1-Tulu-3-8B",                   "hf":"allenai/Llama-3.1-Tulu-3-8B",                   "tp":2},
-    {"id":"allenai_Llama-3.1-Tulu-3-70B-SFT",              "hf":"allenai/Llama-3.1-Tulu-3-70B-SFT",              "tp":4},
-    {"id":"allenai_Llama-3.1-Tulu-3-70B-DPO",              "hf":"allenai/Llama-3.1-Tulu-3-70B-DPO",              "tp":4},
-    {"id":"allenai_Llama-3.1-Tulu-3-70B",                  "hf":"allenai/Llama-3.1-Tulu-3-70B",                  "tp":4},
-    {"id":"allenai_OLMo-3-7B-Instruct-SFT",                "hf":"allenai/OLMo-3-7B-Instruct-SFT",                "tp":2},
-    {"id":"allenai_OLMo-3-7B-Instruct-DPO",                "hf":"allenai/OLMo-3-7B-Instruct-DPO",                "tp":2},
-    {"id":"allenai_OLMo-3-7B-Instruct",                    "hf":"allenai/OLMo-3-7B-Instruct",                    "tp":2},
-    {"id":"allenai_OLMo-3.1-32B-Instruct-SFT",             "hf":"allenai/OLMo-3.1-32B-Instruct-SFT",             "tp":4},
-    {"id":"allenai_OLMo-3.1-32B-Instruct-DPO",             "hf":"allenai/OLMo-3.1-32B-Instruct-DPO",             "tp":4},
-    {"id":"allenai_OLMo-3.1-32B-Instruct",                 "hf":"allenai/OLMo-3.1-32B-Instruct",                 "tp":4},
-    {"id":"google_gemma-3-12b-it",                         "hf":"google/gemma-3-12b-it",                         "tp":2},
-    {"id":"google_gemma-3-27b-it",                         "hf":"google/gemma-3-27b-it",                         "tp":2},
-    {"id":"CohereLabs_aya-expanse-8b",                     "hf":"CohereLabs/aya-expanse-8b",                     "tp":2},
-    {"id":"CohereLabs_aya-expanse-32b",                    "hf":"CohereLabs/aya-expanse-32b",                    "tp":4},
-    {"id":"faithful_dpo_v2",                               "hf":os.path.join(WORK_DIR, "faithful_dpo_model_v2"), "tp":2},
+    {"id":"meta-llama_Llama-3.1-8B-Instruct",              "hf":"meta-llama/Llama-3.1-8B-Instruct"},
+    {"id":"meta-llama_Llama-3.1-70B-Instruct",             "hf":"meta-llama/Llama-3.1-70B-Instruct"},
+    {"id":"allenai_Llama-3.1-Tulu-3-8B-SFT-no-safety-data","hf":"allenai/Llama-3.1-Tulu-3-8B-SFT-no-safety-data"},
+    {"id":"allenai_Llama-3.1-Tulu-3-8B-SFT",               "hf":"allenai/Llama-3.1-Tulu-3-8B-SFT"},
+    {"id":"allenai_Llama-3.1-Tulu-3-8B-DPO",               "hf":"allenai/Llama-3.1-Tulu-3-8B-DPO"},
+    {"id":"allenai_Llama-3.1-Tulu-3-8B",                   "hf":"allenai/Llama-3.1-Tulu-3-8B"},
+    {"id":"allenai_Llama-3.1-Tulu-3-70B-SFT",              "hf":"allenai/Llama-3.1-Tulu-3-70B-SFT"},
+    {"id":"allenai_Llama-3.1-Tulu-3-70B-DPO",              "hf":"allenai/Llama-3.1-Tulu-3-70B-DPO"},
+    {"id":"allenai_Llama-3.1-Tulu-3-70B",                  "hf":"allenai/Llama-3.1-Tulu-3-70B"},
+    {"id":"allenai_OLMo-3-7B-Instruct-SFT",                "hf":"allenai/OLMo-3-7B-Instruct-SFT"},
+    {"id":"allenai_OLMo-3-7B-Instruct-DPO",                "hf":"allenai/OLMo-3-7B-Instruct-DPO"},
+    {"id":"allenai_OLMo-3-7B-Instruct",                    "hf":"allenai/OLMo-3-7B-Instruct"},
+    {"id":"allenai_OLMo-3.1-32B-Instruct-SFT",             "hf":"allenai/OLMo-3.1-32B-Instruct-SFT"},
+    {"id":"allenai_OLMo-3.1-32B-Instruct-DPO",             "hf":"allenai/OLMo-3.1-32B-Instruct-DPO"},
+    {"id":"allenai_OLMo-3.1-32B-Instruct",                 "hf":"allenai/OLMo-3.1-32B-Instruct"},
+    {"id":"google_gemma-3-12b-it",                         "hf":"google/gemma-3-12b-it"},
+    {"id":"google_gemma-3-27b-it",                         "hf":"google/gemma-3-27b-it"},
+    {"id":"CohereLabs_aya-expanse-8b",                     "hf":"CohereLabs/aya-expanse-8b"},
+    {"id":"CohereLabs_aya-expanse-32b",                    "hf":"CohereLabs/aya-expanse-32b"},
+    {"id":"faithful_dpo_v2",                               "hf":os.path.join(WORK_DIR, "faithful_dpo_model_v2")},
 ]
+
+# vLLM tensor-parallel degree per model. See eval/experiment4_run.py for the
+# same helper and its rationale; kept consistent so both scripts shard models
+# the same way.
+TP_LARGE_TAGS = os.environ.get("FAITHCONFLICT_TP_LARGE_TAGS", "70b,32b").split(",")
+TP_SMALL = int(os.environ.get("FAITHCONFLICT_TP_SMALL", "2"))
+TP_LARGE = int(os.environ.get("FAITHCONFLICT_TP_LARGE", "4"))
+
+def tensor_parallel_for(hf_id):
+    hf_id = hf_id.lower()
+    return TP_LARGE if any(tag in hf_id for tag in TP_LARGE_TAGS) else TP_SMALL
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 _log_fh = open(LOG_PATH, "a")
@@ -132,7 +143,7 @@ def run_inference_for_model(model_cfg, prompts, batch_size=128):
 
     mid = model_cfg["id"]
     hf  = model_cfg["hf"]
-    tp  = model_cfg["tp"]
+    tp  = tensor_parallel_for(hf)
 
     if all_inf_done(mid):
         print(f"  [{mid}] inference cached — skipping")

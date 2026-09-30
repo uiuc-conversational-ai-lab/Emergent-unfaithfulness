@@ -26,8 +26,8 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 # All paths are configurable via environment variables. DATA_DIR should point
 # at this repo's data/ folder; WORK_DIR is a writable location for outputs;
 # CHECKPOINTS_DIR holds the intermediate Tulu checkpoint outputs from the
-# stage-analysis run (see ../stage_analysis/).
-REPO_ROOT       = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, os.pardir))
+# stage-analysis scripts in this folder (experiment2_*.py).
+REPO_ROOT       = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 DATA_DIR        = os.environ.get("FAITHCONFLICT_DATA_DIR", os.path.join(REPO_ROOT, "data"))
 WORK_DIR        = os.environ.get("FAITHCONFLICT_WORK_DIR", os.path.join(REPO_ROOT, "workdir"))
 CHECKPOINTS_DIR = os.environ.get("FAITHCONFLICT_CHECKPOINTS_DIR", os.path.join(WORK_DIR, "checkpoints"))

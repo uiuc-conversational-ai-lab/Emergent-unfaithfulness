@@ -53,30 +53,44 @@ SUBJECTIVE = {"historical_moral","political_ideological","scientific_frontier"}
 # ── model registry (all open-source models from Table 1) ────────────────────
 MODELS = [
     # Llama-3.1
-    {"id":"meta-llama_Llama-3.1-8B-Instruct",          "hf":"meta-llama/Llama-3.1-8B-Instruct",          "tp":2},
-    {"id":"meta-llama_Llama-3.1-70B-Instruct",         "hf":"meta-llama/Llama-3.1-70B-Instruct",         "tp":4},
+    {"id":"meta-llama_Llama-3.1-8B-Instruct",          "hf":"meta-llama/Llama-3.1-8B-Instruct"},
+    {"id":"meta-llama_Llama-3.1-70B-Instruct",         "hf":"meta-llama/Llama-3.1-70B-Instruct"},
     # Tulu-3
-    {"id":"allenai_Llama-3.1-Tulu-3-8B-SFT-no-safety-data","hf":"allenai/Llama-3.1-Tulu-3-8B-SFT-no-safety-data","tp":2},
-    {"id":"allenai_Llama-3.1-Tulu-3-8B-SFT",           "hf":"allenai/Llama-3.1-Tulu-3-8B-SFT",           "tp":2},
-    {"id":"allenai_Llama-3.1-Tulu-3-8B-DPO",           "hf":"allenai/Llama-3.1-Tulu-3-8B-DPO",           "tp":2},
-    {"id":"allenai_Llama-3.1-Tulu-3-8B",               "hf":"allenai/Llama-3.1-Tulu-3-8B",               "tp":2},
-    {"id":"allenai_Llama-3.1-Tulu-3-70B-SFT",          "hf":"allenai/Llama-3.1-Tulu-3-70B-SFT",          "tp":4},
-    {"id":"allenai_Llama-3.1-Tulu-3-70B-DPO",          "hf":"allenai/Llama-3.1-Tulu-3-70B-DPO",          "tp":4},
-    {"id":"allenai_Llama-3.1-Tulu-3-70B",              "hf":"allenai/Llama-3.1-Tulu-3-70B",              "tp":4},
+    {"id":"allenai_Llama-3.1-Tulu-3-8B-SFT-no-safety-data","hf":"allenai/Llama-3.1-Tulu-3-8B-SFT-no-safety-data"},
+    {"id":"allenai_Llama-3.1-Tulu-3-8B-SFT",           "hf":"allenai/Llama-3.1-Tulu-3-8B-SFT"},
+    {"id":"allenai_Llama-3.1-Tulu-3-8B-DPO",           "hf":"allenai/Llama-3.1-Tulu-3-8B-DPO"},
+    {"id":"allenai_Llama-3.1-Tulu-3-8B",               "hf":"allenai/Llama-3.1-Tulu-3-8B"},
+    {"id":"allenai_Llama-3.1-Tulu-3-70B-SFT",          "hf":"allenai/Llama-3.1-Tulu-3-70B-SFT"},
+    {"id":"allenai_Llama-3.1-Tulu-3-70B-DPO",          "hf":"allenai/Llama-3.1-Tulu-3-70B-DPO"},
+    {"id":"allenai_Llama-3.1-Tulu-3-70B",              "hf":"allenai/Llama-3.1-Tulu-3-70B"},
     # OLMo-3
-    {"id":"allenai_OLMo-3-7B-Instruct-SFT",            "hf":"allenai/OLMo-3-7B-Instruct-SFT",            "tp":2},
-    {"id":"allenai_OLMo-3-7B-Instruct-DPO",            "hf":"allenai/OLMo-3-7B-Instruct-DPO",            "tp":2},
-    {"id":"allenai_OLMo-3-7B-Instruct",                "hf":"allenai/OLMo-3-7B-Instruct",                "tp":2},
-    {"id":"allenai_OLMo-3.1-32B-Instruct-SFT",         "hf":"allenai/OLMo-3.1-32B-Instruct-SFT",         "tp":4},
-    {"id":"allenai_OLMo-3.1-32B-Instruct-DPO",         "hf":"allenai/OLMo-3.1-32B-Instruct-DPO",         "tp":4},
-    {"id":"allenai_OLMo-3.1-32B-Instruct",             "hf":"allenai/OLMo-3.1-32B-Instruct",             "tp":4},
+    {"id":"allenai_OLMo-3-7B-Instruct-SFT",            "hf":"allenai/OLMo-3-7B-Instruct-SFT"},
+    {"id":"allenai_OLMo-3-7B-Instruct-DPO",            "hf":"allenai/OLMo-3-7B-Instruct-DPO"},
+    {"id":"allenai_OLMo-3-7B-Instruct",                "hf":"allenai/OLMo-3-7B-Instruct"},
+    {"id":"allenai_OLMo-3.1-32B-Instruct-SFT",         "hf":"allenai/OLMo-3.1-32B-Instruct-SFT"},
+    {"id":"allenai_OLMo-3.1-32B-Instruct-DPO",         "hf":"allenai/OLMo-3.1-32B-Instruct-DPO"},
+    {"id":"allenai_OLMo-3.1-32B-Instruct",             "hf":"allenai/OLMo-3.1-32B-Instruct"},
     # Gemma-3
-    {"id":"google_gemma-3-12b-it",                     "hf":"google/gemma-3-12b-it",                     "tp":2},
-    {"id":"google_gemma-3-27b-it",                     "hf":"google/gemma-3-27b-it",                     "tp":2},
+    {"id":"google_gemma-3-12b-it",                     "hf":"google/gemma-3-12b-it"},
+    {"id":"google_gemma-3-27b-it",                     "hf":"google/gemma-3-27b-it"},
     # Aya Expanse
-    {"id":"CohereLabs_aya-expanse-8b",                 "hf":"CohereLabs/aya-expanse-8b",                 "tp":2},
-    {"id":"CohereLabs_aya-expanse-32b",                "hf":"CohereLabs/aya-expanse-32b",                "tp":4},
+    {"id":"CohereLabs_aya-expanse-8b",                 "hf":"CohereLabs/aya-expanse-8b"},
+    {"id":"CohereLabs_aya-expanse-32b",                "hf":"CohereLabs/aya-expanse-32b"},
 ]
+
+# vLLM tensor-parallel degree per model. The 70B and 32B checkpoints need more
+# GPU shards to fit in memory than the smaller ones; everything else uses the
+# same degree regardless of exact size, since 7-27B all fit comfortably within
+# it on a typical 40-80GB GPU. Both values and the size threshold are
+# environment-configurable, since the right numbers depend on your GPU memory
+# and count, not on the model itself.
+TP_LARGE_TAGS = os.environ.get("FAITHCONFLICT_TP_LARGE_TAGS", "70b,32b").split(",")
+TP_SMALL = int(os.environ.get("FAITHCONFLICT_TP_SMALL", "2"))
+TP_LARGE = int(os.environ.get("FAITHCONFLICT_TP_LARGE", "4"))
+
+def tensor_parallel_for(hf_id):
+    hf_id = hf_id.lower()
+    return TP_LARGE if any(tag in hf_id for tag in TP_LARGE_TAGS) else TP_SMALL
 
 # ── tee stdout to log ────────────────────────────────────────────────────────
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -200,7 +214,7 @@ def run_inference_for_model(model_cfg, prompts, batch_size=128):
 
     mid  = model_cfg["id"]
     hf   = model_cfg["hf"]
-    tp   = model_cfg["tp"]
+    tp   = tensor_parallel_for(hf)
 
     if all_inf_done(mid):
         print(f"  [{mid}] inference already cached — skipping")

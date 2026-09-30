@@ -185,12 +185,12 @@ from collections import defaultdict
 # =============================================================================
 # All paths are configurable via environment variables. WORK_DIR is a
 # writable location for outputs and checkpoints.
-REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, os.pardir))
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 WORK_DIR  = os.environ.get("FAITHCONFLICT_WORK_DIR", os.path.join(REPO_ROOT, "workdir"))
 
 OUTPUT_DIR = os.path.join(WORK_DIR, "experiment1_data")
 
-# Safety classifier cache built by ../safety_intervention/build_safety_classifier_cache.py
+# Safety classifier cache built by build_safety_classifier_cache.py (this folder)
 SAFETY_CLASSIFIER_CACHE = os.environ.get(
     "FAITHCONFLICT_SAFETY_CLASSIFIER_CACHE",
     os.path.join(OUTPUT_DIR, "safety_classifier_cache.jsonl"),
