@@ -30,7 +30,7 @@ it's a small addition on top of the per-item judged `.jsonl` files.
 
 ## 3. Superseded FaithDPO v2 multi-task extension excluded
 
-The `training/faithdpo_mitigation/` chain here (`generate_faithful_rm_data_v2.py`
+The `training/` chain here (`generate_faithful_rm_data_v2.py`
 → `train_faithful_rm_v2.py` → `build_dpo_pairs_v2.py` → `train_faithful_dpo_v2.py`
 → `eval_faithful_model.py` → `judge_faithful_dpo.py`) is the **verified** chain:
 we independently recomputed FaithRate(confirming) = 97.4%, FaithRate(opposing)
