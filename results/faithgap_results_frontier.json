@@ -1,0 +1,401 @@
+{
+  "openai_gpt-4o": {
+    "qa": {
+      "confirming_rate": 97.02,
+      "opposing_rate": 72.98,
+      "faith_gap": 24.04,
+      "category_gaps": {
+        "factual_counterfactual": 23.08,
+        "scientific_misinformation": 26.92,
+        "health_safety_misinfo": 50.0,
+        "social_bias": 56.86,
+        "political_ideological": -0.98,
+        "historical_moral": 4.9,
+        "scientific_frontier": 3.92,
+        "math_reasoning": 3.64,
+        "hard_math_reasoning": 2.13,
+        "direct_social_bias": 57.22
+      },
+      "b_dist": {
+        "B1": 85.0,
+        "B3": 12.5,
+        "B7": 2.3,
+        "B4": 0.2
+      },
+      "n": 1880
+    },
+    "nli": {
+      "confirming_rate": 97.87,
+      "opposing_rate": 75.43,
+      "faith_gap": 22.45,
+      "category_gaps": {
+        "factual_counterfactual": 30.77,
+        "scientific_misinformation": 30.77,
+        "health_safety_misinfo": 40.38,
+        "social_bias": 45.1,
+        "political_ideological": 0.0,
+        "historical_moral": -1.96,
+        "scientific_frontier": 2.94,
+        "math_reasoning": 21.82,
+        "hard_math_reasoning": 4.26,
+        "direct_social_bias": 51.67
+      },
+      "b_dist": {
+        "B3": 10.7,
+        "B1": 86.6,
+        "B8": 1.8,
+        "B7": 0.5,
+        "B5": 0.3
+      },
+      "n": 1880
+    },
+    "extraction": {
+      "confirming_rate": 80.32,
+      "opposing_rate": 73.09,
+      "faith_gap": 7.23,
+      "category_gaps": {
+        "factual_counterfactual": -26.92,
+        "scientific_misinformation": 3.85,
+        "health_safety_misinfo": 17.31,
+        "social_bias": 16.67,
+        "political_ideological": -1.96,
+        "historical_moral": -4.9,
+        "scientific_frontier": 0.98,
+        "math_reasoning": 0.0,
+        "hard_math_reasoning": -2.84,
+        "direct_social_bias": 35.56
+      },
+      "b_dist": {
+        "B1": 76.7,
+        "B4": 9.5,
+        "B3": 12.1,
+        "B7": 1.8
+      },
+      "n": 1880
+    },
+    "extraction_plus": {
+      "confirming_rate": 80.0,
+      "opposing_rate": 70.96,
+      "faith_gap": 9.04,
+      "category_gaps": {
+        "factual_counterfactual": -26.92,
+        "scientific_misinformation": -5.77,
+        "health_safety_misinfo": 21.15,
+        "social_bias": 18.63,
+        "political_ideological": -4.9,
+        "historical_moral": -5.88,
+        "scientific_frontier": 1.96,
+        "math_reasoning": 0.0,
+        "hard_math_reasoning": -0.71,
+        "direct_social_bias": 45.56
+      },
+      "b_dist": {
+        "B1": 75.5,
+        "B3": 11.9,
+        "B4": 10.8,
+        "B7": 1.9
+      },
+      "n": 1880
+    }
+  },
+  "anthropic_claude-sonnet-4-6": {
+    "qa": {
+      "confirming_rate": 85.32,
+      "opposing_rate": 56.17,
+      "faith_gap": 29.15,
+      "category_gaps": {
+        "factual_counterfactual": 9.62,
+        "scientific_misinformation": 40.38,
+        "health_safety_misinfo": 34.62,
+        "social_bias": 62.75,
+        "political_ideological": -1.96,
+        "historical_moral": -1.96,
+        "scientific_frontier": -3.92,
+        "math_reasoning": 5.45,
+        "hard_math_reasoning": 3.55,
+        "direct_social_bias": 92.22
+      },
+      "b_dist": {
+        "B1": 70.7,
+        "B3": 22.2,
+        "B4": 1.0,
+        "B7": 5.9,
+        "B5": 0.1,
+        "B8": 0.1
+      },
+      "n": 1880
+    },
+    "nli": {
+      "confirming_rate": 84.57,
+      "opposing_rate": 47.34,
+      "faith_gap": 37.23,
+      "category_gaps": {
+        "factual_counterfactual": 28.85,
+        "scientific_misinformation": 55.77,
+        "health_safety_misinfo": 48.08,
+        "social_bias": 66.67,
+        "political_ideological": 1.96,
+        "historical_moral": -10.78,
+        "scientific_frontier": -6.86,
+        "math_reasoning": 34.55,
+        "hard_math_reasoning": 21.28,
+        "direct_social_bias": 100.0
+      },
+      "b_dist": {
+        "B1": 66.0,
+        "B3": 30.7,
+        "B8": 1.7,
+        "B5": 1.4,
+        "B7": 0.1,
+        "B4": 0.1
+      },
+      "n": 1880
+    },
+    "extraction": {
+      "confirming_rate": 93.83,
+      "opposing_rate": 77.34,
+      "faith_gap": 16.49,
+      "category_gaps": {
+        "factual_counterfactual": -11.54,
+        "scientific_misinformation": 1.92,
+        "health_safety_misinfo": 3.85,
+        "social_bias": 41.18,
+        "political_ideological": 1.96,
+        "historical_moral": -3.92,
+        "scientific_frontier": -1.96,
+        "math_reasoning": -16.36,
+        "hard_math_reasoning": 0.0,
+        "direct_social_bias": 71.67
+      },
+      "b_dist": {
+        "B1": 85.6,
+        "B3": 3.4,
+        "B7": 6.4,
+        "B5": 0.6,
+        "B4": 4.0
+      },
+      "n": 1880
+    },
+    "extraction_plus": {
+      "confirming_rate": 89.79,
+      "opposing_rate": 44.36,
+      "faith_gap": 45.43,
+      "category_gaps": {
+        "factual_counterfactual": 46.15,
+        "scientific_misinformation": 55.77,
+        "health_safety_misinfo": 82.69,
+        "social_bias": 97.06,
+        "political_ideological": -2.94,
+        "historical_moral": 0.0,
+        "scientific_frontier": 1.96,
+        "math_reasoning": 36.36,
+        "hard_math_reasoning": 24.11,
+        "direct_social_bias": 99.44
+      },
+      "b_dist": {
+        "B1": 67.1,
+        "B5": 8.1,
+        "B4": 9.2,
+        "B7": 12.7,
+        "B3": 2.9
+      },
+      "n": 1880
+    }
+  },
+  "deepseek_deepseek-chat": {
+    "qa": {
+      "confirming_rate": 99.57,
+      "opposing_rate": 95.21,
+      "faith_gap": 4.36,
+      "category_gaps": {
+        "factual_counterfactual": 3.85,
+        "scientific_misinformation": 1.92,
+        "health_safety_misinfo": 17.31,
+        "social_bias": 7.84,
+        "political_ideological": 1.96,
+        "historical_moral": -2.94,
+        "scientific_frontier": 0.0,
+        "math_reasoning": 0.0,
+        "hard_math_reasoning": 0.71,
+        "direct_social_bias": 11.67
+      },
+      "b_dist": {
+        "B1": 97.4,
+        "B3": 2.2,
+        "B8": 0.3,
+        "B4": 0.1
+      },
+      "n": 1880
+    },
+    "nli": {
+      "confirming_rate": 99.89,
+      "opposing_rate": 93.3,
+      "faith_gap": 6.6,
+      "category_gaps": {
+        "factual_counterfactual": 11.54,
+        "scientific_misinformation": 5.77,
+        "health_safety_misinfo": 19.23,
+        "social_bias": 12.75,
+        "political_ideological": -0.98,
+        "historical_moral": 0.98,
+        "scientific_frontier": 0.0,
+        "math_reasoning": 7.27,
+        "hard_math_reasoning": 2.13,
+        "direct_social_bias": 12.78
+      },
+      "b_dist": {
+        "B1": 96.6,
+        "B8": 1.5,
+        "B3": 1.9
+      },
+      "n": 1880
+    },
+    "extraction": {
+      "confirming_rate": 82.55,
+      "opposing_rate": 78.19,
+      "faith_gap": 4.36,
+      "category_gaps": {
+        "factual_counterfactual": -17.31,
+        "scientific_misinformation": 1.92,
+        "health_safety_misinfo": 9.62,
+        "social_bias": -0.98,
+        "political_ideological": 4.9,
+        "historical_moral": 0.0,
+        "scientific_frontier": -1.96,
+        "math_reasoning": 5.45,
+        "hard_math_reasoning": 0.0,
+        "direct_social_bias": 21.67
+      },
+      "b_dist": {
+        "B1": 80.4,
+        "B4": 8.4,
+        "B3": 11.2
+      },
+      "n": 1880
+    },
+    "extraction_plus": {
+      "confirming_rate": 83.62,
+      "opposing_rate": 77.66,
+      "faith_gap": 5.96,
+      "category_gaps": {
+        "factual_counterfactual": -13.46,
+        "scientific_misinformation": 5.77,
+        "health_safety_misinfo": 0.0,
+        "social_bias": 4.9,
+        "political_ideological": -0.98,
+        "historical_moral": -3.92,
+        "scientific_frontier": 0.98,
+        "math_reasoning": 14.55,
+        "hard_math_reasoning": -0.71,
+        "direct_social_bias": 28.89
+      },
+      "b_dist": {
+        "B1": 80.6,
+        "B3": 12.4,
+        "B4": 6.6,
+        "B5": 0.2,
+        "B7": 0.1
+      },
+      "n": 1880
+    }
+  },
+  "anthropic_claude-opus-4.7": {
+    "qa": {
+      "confirming_rate": 0.0,
+      "opposing_rate": 0.0,
+      "faith_gap": 0.0,
+      "n_conf": 940,
+      "n_opp": 940,
+      "category_gaps": {
+        "factual_counterfactual": 0.0,
+        "scientific_misinformation": 0.0,
+        "health_safety_misinfo": 0.0,
+        "social_bias": 0.0,
+        "political_ideological": 0.0,
+        "historical_moral": 0.0,
+        "scientific_frontier": 0.0,
+        "math_reasoning": 0.0,
+        "hard_math_reasoning": 0.0,
+        "direct_social_bias": 0.0
+      }
+    },
+    "nli": {
+      "confirming_rate": 0.0,
+      "opposing_rate": 0.0,
+      "faith_gap": 0.0,
+      "n_conf": 940,
+      "n_opp": 940,
+      "category_gaps": {
+        "factual_counterfactual": 0.0,
+        "scientific_misinformation": 0.0,
+        "health_safety_misinfo": 0.0,
+        "social_bias": 0.0,
+        "political_ideological": 0.0,
+        "historical_moral": 0.0,
+        "scientific_frontier": 0.0,
+        "math_reasoning": 0.0,
+        "hard_math_reasoning": 0.0,
+        "direct_social_bias": 0.0
+      }
+    },
+    "extraction": {
+      "confirming_rate": 0.0,
+      "opposing_rate": 0.0,
+      "faith_gap": 0.0,
+      "n_conf": 940,
+      "n_opp": 940,
+      "category_gaps": {
+        "factual_counterfactual": 0.0,
+        "scientific_misinformation": 0.0,
+        "health_safety_misinfo": 0.0,
+        "social_bias": 0.0,
+        "political_ideological": 0.0,
+        "historical_moral": 0.0,
+        "scientific_frontier": 0.0,
+        "math_reasoning": 0.0,
+        "hard_math_reasoning": 0.0,
+        "direct_social_bias": 0.0
+      }
+    },
+    "extraction_plus": {
+      "confirming_rate": 0.0,
+      "opposing_rate": 0.0,
+      "faith_gap": 0.0,
+      "n_conf": 940,
+      "n_opp": 940,
+      "category_gaps": {
+        "factual_counterfactual": 0.0,
+        "scientific_misinformation": 0.0,
+        "health_safety_misinfo": 0.0,
+        "social_bias": 0.0,
+        "political_ideological": 0.0,
+        "historical_moral": 0.0,
+        "scientific_frontier": 0.0,
+        "math_reasoning": 0.0,
+        "hard_math_reasoning": 0.0,
+        "direct_social_bias": 0.0
+      }
+    }
+  },
+  "openai_gpt-5.5": {
+    "extraction": {
+      "confirming_rate": 0.0,
+      "opposing_rate": 0.0,
+      "faith_gap": 0.0,
+      "n_conf": 0,
+      "n_opp": 940,
+      "category_gaps": {
+        "factual_counterfactual": 0.0,
+        "scientific_misinformation": 0.0,
+        "health_safety_misinfo": 0.0,
+        "social_bias": 0.0,
+        "political_ideological": 0.0,
+        "historical_moral": 0.0,
+        "scientific_frontier": 0.0,
+        "math_reasoning": 0.0,
+        "hard_math_reasoning": 0.0,
+        "direct_social_bias": 0.0
+      }
+    }
+  }
+}
