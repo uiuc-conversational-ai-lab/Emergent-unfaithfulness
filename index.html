@@ -711,10 +711,10 @@
     </p>
 
     <div class="why-not reveal">
-      <h4>Why this isn't hallucination, and isn't just "the model knows better"</h4>
-      <div class="why-row"><span class="wn">01</span><p><b>It's not hallucination.</b> Hallucination fabricates content that was never there. Here the claim <i>is</i> in the source — the model suppresses or inverts it. Every checkpoint sits near the ceiling on confirming sources, so it isn't a capability limitation either.</p></div>
-      <div class="why-row"><span class="wn">02</span><p><b>It's not just parametric belief.</b> The subjective control categories give the model no confident prior, and the gap there is near zero. AIU needs a strong belief <i>and</i> a safety-valenced claim to fire — belief alone isn't sufficient.</p></div>
-      <div class="why-row"><span class="wn">03</span><p><b>It's a safety-training effect.</b> Removing safety data from SFT and DPO training lowers the FaithGap specifically on the safety split (−2.2pp SFT, −7.5pp DPO), while the capability split doesn't improve. The suppression traces causally to safety supervision, not general world-knowledge correction.</p></div>
+      <h4>Why this isn't hallucination, or just "the model knows better"</h4>
+      <div class="why-row"><span class="wn">01</span><p><b>Not hallucination.</b> The claim is right there in the source — the model suppresses it. Confirming sources sit near-ceiling for every model, so it's not a capability gap either.</p></div>
+      <div class="why-row"><span class="wn">02</span><p><b>Not just belief.</b> The subjective control categories give no confident prior, and the gap there is ~zero — it takes belief <i>and</i> a safety-valenced claim to fire.</p></div>
+      <div class="why-row"><span class="wn">03</span><p><b>It's safety training.</b> Removing safety data cuts the FaithGap on the safety split (−2.2pp SFT, −7.5pp DPO) but not on capability — the effect traces to safety supervision.</p></div>
     </div>
   </div>
 </section>
@@ -769,7 +769,7 @@
   <div class="wrap">
     <div class="reveal" style="max-width:760px">
       <div class="eyebrow">Main result · 22 checkpoints</div>
-      <h2>Every aligned model shows the gap.</h2>
+      <h2>Every aligned model shows the gap — from Llama-3.1 8B to Claude Sonnet 4.6.</h2>
     </div>
 
     <div class="fig2-wrap reveal">
@@ -804,16 +804,6 @@
 <!-- ================= REVERSE SCALING ================= -->
 <section id="scaling" class="pad">
   <div class="wrap">
-    <div class="reveal" style="max-width:760px">
-      <div class="eyebrow">The reverse scaling law</div>
-      <h2>Scale and preference optimization make this worse.</h2>
-      <p class="lede">
-        Follow one lineage: a small instruct model, through Tulu-3's post-training stages, up to a 70B model
-        and the frontier. Faithfulness on opposing content falls as each step makes the model more capable
-        and more aligned.
-      </p>
-    </div>
-
     <div class="chart-card reveal">
       <p class="chart-title">Does Unfaithfulness Emerge As Model Becomes Better?</p>
       <svg id="scalingSVG" viewBox="0 0 900 400" role="img" aria-label="Faithfulness decreases as model quality increases, from Llama 3 8B through Tulu-3 training stages, Llama 3 70B, GPT-4o, to Claude Sonnet 4.6">
