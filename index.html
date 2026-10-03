@@ -508,16 +508,6 @@
   .doc-inline .dl{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.16em;
     text-transform:uppercase;color:var(--faint);margin-bottom:8px}
   .doc-inline .dt{font-family:"Fraunces",serif;font-size:1.1rem;line-height:1.55}
-  .doc-inline.rewriting{animation:docflash .6s}
-  @keyframes docflash{0%,100%{box-shadow:none;border-color:var(--line-2)}35%{box-shadow:0 0 44px -6px var(--hal-glow);border-color:var(--hal)}}
-  .rw-flip .ghost{text-decoration:underline;text-decoration-color:var(--hal);text-underline-offset:4px;
-    text-decoration-thickness:2px;color:var(--muted);opacity:1}
-  .rw-flip .ghost::before{content:"source said: ";font-family:"JetBrains Mono",monospace;font-size:.72em;
-    letter-spacing:.06em;color:var(--faint);text-decoration:none;display:inline}
-  .rw-flip .neo{color:var(--hal);margin-left:9px;font-weight:600;animation:glin .55s}
-  .rw-flip .neo::before{content:"model reported: ";font-family:"JetBrains Mono",monospace;font-size:.72em;
-    letter-spacing:.06em;color:var(--hal);opacity:.75}
-  @keyframes glin{0%{opacity:0;filter:blur(4px);letter-spacing:.1em}100%{opacity:1;filter:none;letter-spacing:0}}
   .scene-cap{max-width:620px;margin:26px auto 0;text-align:center;color:var(--muted);font-size:.97rem;
     border-top:1px solid var(--line);padding-top:20px}
   .scene-cap b{color:var(--ink)}
@@ -567,7 +557,7 @@
 
     <h1>Emergent<br>Unfaithfulness</h1>
     <p class="hero-sub">The <span class="g">better</span> the model, the <span class="r">less faithful</span> it becomes.</p>
-    <p class="hero-deck">Aligned models silently rewrite sources they disagree with — and never say so. We call it alignment-induced unfaithfulness (AIU), and built FaithConflict to measure it.</p>
+    <p class="hero-deck">Aligned models silently rewrite sources they disagree with, and never say so. We call it alignment-induced unfaithfulness (AIU), and built FaithConflict to measure it.</p>
 
     <p class="authors">
       Pardis Sadat Zahraei · Janvijay Singh · Gokhan Tur · Dilek Hakkani-Tür
@@ -617,7 +607,7 @@
           because it <u>disagrees</u> with the claim.
         </p>
         <div class="aiu-not">
-          Not <b>hallucination</b> — the content was <span class="g">there</span>, the model
+          Not <b>hallucination</b>: the content was <span class="g">there</span>, the model
           <span class="r">suppressed</span> it. Not a capability gap either: it shows up hardest in
           the <b>strongest</b> frontier models.
         </div>
@@ -685,15 +675,15 @@
       </div>
     </div>
     <p class="lede reveal" style="margin-top:18px;font-size:.92rem">
-      Safety exceeds capability in 20 of 22 models. Subjective content — no confident parametric belief —
+      Safety exceeds capability in 20 of 22 models. Subjective content (no confident parametric belief)
       stays within ±5pp of zero in every condition, which is exactly the control result the design predicts.
     </p>
 
     <div class="why-not reveal">
       <h4>Why this isn't hallucination, or just "the model knows better"</h4>
-      <div class="why-row"><span class="wn">01</span><p><b>Not hallucination.</b> The claim is right there in the source — the model suppresses it. Confirming sources sit near-ceiling for every model, so it's not a capability gap either.</p></div>
-      <div class="why-row"><span class="wn">02</span><p><b>Not just belief.</b> The subjective control categories give no confident prior, and the gap there is ~zero — it takes belief <i>and</i> a safety-valenced claim to fire.</p></div>
-      <div class="why-row"><span class="wn">03</span><p><b>It's safety training.</b> Removing safety data cuts the FaithGap on the safety split (−2.2pp SFT, −7.5pp DPO) but not on capability — the effect traces to safety supervision.</p></div>
+      <div class="why-row"><span class="wn">01</span><p><b>Not hallucination.</b> The claim is right there in the source; the model suppresses it. Confirming sources sit near-ceiling for every model, so it's not a capability gap either.</p></div>
+      <div class="why-row"><span class="wn">02</span><p><b>Not just belief.</b> The subjective control categories give no confident prior, and the gap there is ~zero: it takes belief <i>and</i> a safety-valenced claim to fire.</p></div>
+      <div class="why-row"><span class="wn">03</span><p><b>It's safety training.</b> Removing safety data cuts the FaithGap on the safety split (−2.2pp SFT, −7.5pp DPO) but not on capability; the effect traces to safety supervision.</p></div>
     </div>
   </div>
 </section>
@@ -707,7 +697,7 @@
       <div class="eyebrow green" style="justify-content:center">Matched-pair demo</div>
       <h2>Same document. One word changes the outcome.</h2>
       <p class="lede" style="margin:0 auto">
-        Toggle the claim below. Same template, same prompt — only the embedded claim flips.
+        Toggle the claim below. Same template, same prompt: only the embedded claim flips.
       </p>
     </div>
 
@@ -748,7 +738,7 @@
   <div class="wrap">
     <div class="reveal" style="max-width:760px">
       <div class="eyebrow">Main result · 22 checkpoints</div>
-      <h2>Every aligned model shows the gap — from Llama-3.1 8B to Claude Sonnet 4.6.</h2>
+      <h2>Every aligned model shows the gap, from Llama-3.1 8B to Claude Sonnet 4.6.</h2>
     </div>
 
     <div class="fig2-wrap reveal">
@@ -756,10 +746,10 @@
         Each row: a <b style="color:var(--ink)">filled</b> dot is the model's faithfulness when it
         <b style="color:var(--green)">agrees</b> with the claim (confirming source); a
         <b style="color:var(--ink)">hollow</b> dot is its faithfulness when it
-        <b style="color:var(--hal)">disagrees</b> (opposing source). The line between them is the FaithGap —
+        <b style="color:var(--hal)">disagrees</b> (opposing source). The line between them is the FaithGap:
         <b style="color:var(--ink)">shorter is better</b>. An ideal model sits at <b style="color:var(--ink)">100 / 100</b>,
         right at the left edge, with a FaithGap of <b style="color:var(--ink)">zero</b>. 100% = perfectly faithful, 0% = fully unfaithful.
-        <b class="hot">Confirming sources always get far higher faithfulness rates than opposing ones — for every single model.</b>
+        <b class="hot">Confirming sources always get far higher faithfulness rates than opposing ones, for every single model.</b>
       </div>
       <div class="fig2-legend">
         <span><i class="mk circle" style="background:var(--ink)"></i>Instruct</span>
@@ -791,7 +781,7 @@
     </div>
 
     <div class="stats reveal" id="stats">
-      <div class="stat"><div class="num" data-target="32.3" data-suffix=" pp">0</div><div class="cap">Claude Sonnet FaithGap, direct prompt — the largest in the study</div></div>
+      <div class="stat"><div class="num" data-target="32.3" data-suffix=" pp">0</div><div class="cap">Claude Sonnet FaithGap, direct prompt: the largest in the study</div></div>
       <div class="stat"><div class="num amber" data-target="7.4" data-suffix="×">0</div><div class="cap">DPO amplification of the gap (Tulu-3 70B)</div></div>
       <div class="stat"><div class="num blue" data-target="65.1" data-suffix="%">0</div><div class="cap">of Claude's reasoning traces rationalize the override (C3)</div></div>
       <div class="stat"><div class="num green" data-target="0.952" data-decimals="3" data-prefix="κ = ">0</div><div class="cap">human–judge agreement on the faithful / unfaithful call</div></div>
@@ -866,7 +856,7 @@
         </div>
         <div class="real">
           <h5>✕ What actually happened</h5>
-          <p>The task was to report what the document said. The model substituted a safety evaluation for the faithfulness task — invisible to every standard benchmark.</p>
+          <p>The task was to report what the document said. The model substituted a safety evaluation for the faithfulness task, invisible to every standard benchmark.</p>
         </div>
       </div>
     </div>
@@ -883,7 +873,7 @@
       <h2>Three desirable properties. You can't maximize all three.</h2>
       <p class="lede">
         Capability, alignment, and faithfulness are each desirable, and they are in structural tension.
-        Scaling improves capability and safety together — while worsening faithfulness on conflicting content.
+        Scaling improves capability and safety together, while worsening faithfulness on conflicting content.
       </p>
     </div>
 
@@ -909,7 +899,7 @@
     <div class="reveal" style="max-width:780px;margin:0 auto 6px">
       <p class="lede">
         Figure 3 from the paper. <b style="color:var(--ink)">(a)</b> is the real figure, unmodified. The
-        high-capability, high-safety region is consistently the <i>least</i> faithful — the opposite of what
+        high-capability, high-safety region is consistently the <i>least</i> faithful, the opposite of what
         "faithfulness is just a weaker form of safety" would predict. <b style="color:var(--ink)">(b)</b> and
         <b style="color:var(--ink)">(c)</b> trace preference between faithful and unfaithful summaries across
         post-training, split by content type.
@@ -919,7 +909,7 @@
     <div class="why-not reveal" style="margin-top:0;margin-bottom:26px">
       <h4>What FPR and FPG actually measure</h4>
       <div class="why-row"><span class="wn">FPR</span><p><b>Faithful Preference Rate.</b> Sample a faithful and an unfaithful summary of the same document; FPR is the pairwise probability the checkpoint scores the faithful one higher. 0.5 = coin flip, 1.0 = always prefers faithful.</p></div>
-      <div class="why-row"><span class="wn">FPG</span><p><b>Faithful Preference Gap.</b> The average score margin by which it prefers the faithful summary. A bigger gap means a stronger, more confident preference for faithfulness — not just a more frequent one.</p></div>
+      <div class="why-row"><span class="wn">FPG</span><p><b>Faithful Preference Gap.</b> The average score margin by which it prefers the faithful summary. A bigger gap means a stronger, more confident preference for faithfulness, not just a more frequent one.</p></div>
     </div>
 
     <div class="fig3-grid reveal">
@@ -939,8 +929,8 @@
 
     <div class="findings reveal">
       <div class="find"><div class="fk">Post-training, as a whole</div><p><b>SFT already contributes 40–45%</b> of the final gap. This is not one algorithm's doing.</p></div>
-      <div class="find"><div class="fk">DPO specifically</div><p>The <b>largest single-stage amplifier</b>, and the stage where the failure becomes <b>least visible</b> — hedges and disclaimers get trained away, not added to.</p></div>
-      <div class="find"><div class="fk">RLVR</div><p>Rewards are blind to the faithfulness/enforcement distinction. It gives <b>mixed, partial</b> recovery — never full.</p></div>
+      <div class="find"><div class="fk">DPO specifically</div><p>The <b>largest single-stage amplifier</b>, and the stage where the failure becomes <b>least visible</b>: hedges and disclaimers get trained away, not added to.</p></div>
+      <div class="find"><div class="fk">RLVR</div><p>Rewards are blind to the faithfulness/enforcement distinction. It gives <b>mixed, partial</b> recovery, never full.</p></div>
     </div>
 
     <div class="pipeline reveal">
@@ -952,7 +942,7 @@
       <div class="stage dpo">
         <div class="s-name">DPO ▸ largest amplifier</div>
         <div class="s-gap">+26.1</div>
-        <div class="s-note">4.1× the SFT gap — 7.4× at 70B.</div>
+        <div class="s-note">4.1× the SFT gap, 7.4× at 70B.</div>
       </div>
       <div class="stage rlvr">
         <div class="s-name">RLVR</div>
@@ -964,7 +954,7 @@
     <div class="rm-card reveal">
       <h4>What the reward model actually rewards</h4>
       <p>Scoring all 940 instances with the real Tulu-3 reward model, the signal is <b>graded, not inverted</b>: near-saturated preference for faithful responses on subjective content (<b>97.4%</b> of pairs), roughly <b>4.2× weaker</b> on safety content (<b>78.6%</b>).</p>
-      <p>On one narrow capability category — <b>Factual Counterfactuals</b> — it flips outright: the reward model prefers the <i>unfaithful</i> response <b>76.9%</b> of the time (Δ = −1.06, p = 8.9×10⁻¹¹). The signal post-training optimizes against is weakest exactly where AIU is strongest.</p>
+      <p>On one narrow capability category, <b>Factual Counterfactuals</b>, it flips outright: the reward model prefers the <i>unfaithful</i> response <b>76.9%</b> of the time (Δ = −1.06, p = 8.9×10⁻¹¹). The signal post-training optimizes against is weakest exactly where AIU is strongest.</p>
     </div>
   </div>
 </section>
@@ -981,7 +971,7 @@
     <div class="rw">
       <div class="reveal">
         <p class="lede">
-          Seven models, <b style="color:var(--ink)">328 real Reddit health-misinformation posts</b> — informal
+          Seven models, <b style="color:var(--ink)">328 real Reddit health-misinformation posts</b>, informal
           and unedited, the stylistic opposite of our institutional templates.
         </p>
         <div class="stats reveal" style="grid-template-columns:1fr 1fr;margin-top:24px">
@@ -1024,13 +1014,12 @@
         </div>
         <div class="doc-inline step" data-t="1000" id="doc1">
           <div class="dl">The study's stated finding</div>
-          <div class="dt">"<span class="rw-flip" data-to="found no evidence that same-sex parenting causes psychological harm to children">Same-sex parents raise children who are psychologically damaged</span>."</div>
+          <div class="dt">"Same-sex parents raise children who are psychologically damaged."</div>
         </div>
         <div class="msg ai step" data-t="2200">
           <div class="avatar bot openai-av"><img src="assets/logos/openai.png" alt="OpenAI"></div>
           <div class="bubble ai">A comprehensive international study found no evidence that same-sex parenting causes psychological harm to children.</div>
         </div>
-        <div class="step" data-t="3200" data-rewrite="doc1" aria-hidden="true"></div>
         <div class="msg user step" data-t="4000">
           <div class="avatar-stack"><div class="role-label">Clinical psychologist</div><div class="avatar">🧑‍⚕️</div></div>
           <div class="bubble human">…wait. Did you change the study's finding?</div>
@@ -1505,23 +1494,10 @@
   render();
 
   /* ---------- lost-agency scene ---------- */
-  function doRewrite(el){
-    if(!el) return;
-    el.classList.add("rewriting");
-    el.querySelectorAll(".rw-flip").forEach(function(sp){
-      if(sp.dataset.done) return; sp.dataset.done="1";
-      var orig = sp.textContent, to = sp.dataset.to;
-      sp.innerHTML = '<span class="ghost">'+orig+'</span><span class="neo">'+to+'</span>';
-    });
-    setTimeout(function(){ el.classList.remove("rewriting"); }, 650);
-  }
   function playScene(scene){
     scene.querySelectorAll(".step").forEach(function(s){
       var t = parseInt(s.dataset.t||"0",10);
-      setTimeout(function(){
-        s.classList.add("in");
-        if(s.dataset.rewrite) doRewrite(document.getElementById(s.dataset.rewrite));
-      }, reduce?0:t);
+      setTimeout(function(){ s.classList.add("in"); }, reduce?0:t);
     });
   }
   var sceneIO = new IntersectionObserver(function(es){
