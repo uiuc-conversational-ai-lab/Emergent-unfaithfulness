@@ -263,41 +263,49 @@
   .ex-tabs button.active{border-color:var(--hal);color:var(--hal);background:rgba(255,77,109,.07)}
   .ex-tabs button:hover{color:var(--ink)}
 
-  /* ===== FIGURE 2 INTERACTIVE ===== */
-  .fig2-wrap{margin-top:40px;border:1px solid var(--line);border-radius:20px;
-    background:linear-gradient(180deg,var(--panel),var(--bg-2));padding:clamp(20px,4vw,36px);box-shadow:var(--shadow);position:relative}
-  .fig2-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;margin-bottom:22px}
-  .fig2-legend{display:flex;gap:16px;flex-wrap:wrap;font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--muted)}
-  .fig2-legend span{display:inline-flex;align-items:center;gap:6px}
-  .fig2-legend .mk{width:10px;height:10px;display:inline-block;background:var(--ink)}
+  /* ===== FIGURE 2 INTERACTIVE (compact, dual-track) ===== */
+  .fig2-wrap{margin-top:36px;border:1px solid var(--line);border-radius:20px;
+    background:linear-gradient(180deg,var(--panel),var(--bg-2));padding:clamp(16px,3vw,28px);box-shadow:var(--shadow);position:relative}
+  .fig2-note{border:1px solid var(--line-2);border-radius:12px;padding:12px 16px;margin-bottom:16px;
+    background:rgba(255,255,255,.02);font-size:.86rem;color:var(--muted);line-height:1.55}
+  .fig2-note b.hot{color:var(--ink);display:block;margin-top:6px;font-weight:700}
+  .fig2-note .ok{color:var(--green);font-weight:700} .fig2-note .bad{color:var(--hal);font-weight:700}
+  .fig2-legend{display:flex;gap:14px;flex-wrap:wrap;font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--muted);margin-bottom:10px}
+  .fig2-legend span{display:inline-flex;align-items:center;gap:5px}
+  .fig2-legend .mk{width:9px;height:9px;display:inline-block;background:var(--ink)}
   .fig2-legend .mk.circle{border-radius:50%}
   .fig2-legend .mk.tri{clip-path:polygon(50% 0,0 100%,100% 100%)}
   .fig2-legend .mk.sq{border-radius:2px}
   .fig2-legend .mk.star{clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
-  .fig2-fam{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--faint);margin:18px 0 6px;padding-top:10px;border-top:1px solid var(--line)}
-  .fig2-fam:first-child{margin-top:0;padding-top:0;border-top:0}
-  .fig2-row{display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:center;padding:4px 0}
-  @media(max-width:620px){.fig2-row{grid-template-columns:100px 1fr;gap:8px}}
-  .fig2-label{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);text-align:right;
+  .fig2-head{display:grid;grid-template-columns:140px 1fr 1fr;gap:8px;margin-bottom:3px}
+  @media(max-width:560px){.fig2-head{grid-template-columns:92px 1fr 1fr}}
+  .fig2-head .fh{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--faint);text-align:center}
+  .fig2-row{display:grid;grid-template-columns:140px 1fr 1fr;gap:8px;align-items:center;padding:2px 2px;border-radius:5px}
+  @media(max-width:560px){.fig2-row{grid-template-columns:92px 1fr 1fr;gap:5px}}
+  .fig2-id{display:flex;align-items:center;gap:6px;min-width:0}
+  .co-badge{width:15px;height:15px;border-radius:4px;background:#fff;display:flex;align-items:center;justify-content:center;
+    flex:0 0 auto;padding:1.5px;box-sizing:border-box}
+  .co-badge img{width:100%;height:100%;object-fit:contain;display:block}
+  .co-mono{width:15px;height:15px;border-radius:4px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;
+    color:#fff;font-family:"JetBrains Mono",monospace;font-size:6.5px;font-weight:700;letter-spacing:-.02em}
+  .fig2-label{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--muted);
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .fig2-track{position:relative;height:24px}
+  .fig2-track{position:relative;height:19px}
   .fig2-track::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--line);transform:translateY(-50%)}
   .fig2-line{position:absolute;top:50%;height:3px;transform:translateY(-50%);border-radius:2px;cursor:pointer}
-  .fig2-mark{position:absolute;top:50%;width:12px;height:12px;transform:translate(-50%,-50%);cursor:pointer;
+  .fig2-mark{position:absolute;top:50%;width:10px;height:10px;transform:translate(-50%,-50%);cursor:pointer;
     transition:transform .15s;border:2px solid;box-sizing:border-box}
-  .fig2-mark:hover{transform:translate(-50%,-50%) scale(1.5)}
+  .fig2-mark:hover{transform:translate(-50%,-50%) scale(1.6)}
   .fig2-mark.circle{border-radius:50%}
   .fig2-mark.tri{clip-path:polygon(50% 2%,4% 96%,96% 96%);border-radius:0}
   .fig2-mark.sq{border-radius:2px}
   .fig2-mark.star{clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);border-radius:0;border-width:0}
   .fig2-mark.confirm{background:var(--mc);border-color:var(--mc)}
-  .fig2-mark.oppose{background:var(--bg);border-color:var(--mc)}
-  .fig2-axis{display:grid;grid-template-columns:150px 1fr;gap:14px;margin-top:10px}
-  @media(max-width:620px){.fig2-axis{grid-template-columns:100px 1fr}}
-  .fig2-axis span{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--faint)}
-  .fig2-axis .al{text-align:left}
-  .fig2-axis .ar{text-align:right}
+  .fig2-mark.oppose{background:transparent;border-color:var(--mc)}
+  .fig2-axis{display:grid;grid-template-columns:140px 1fr 1fr;gap:8px;margin-top:6px}
+  @media(max-width:560px){.fig2-axis{grid-template-columns:92px 1fr 1fr}}
+  .fig2-axis span{font-family:"JetBrains Mono",monospace;font-size:9px;color:var(--faint)}
   .fig2-axis-row{display:flex;justify-content:space-between}
 
   /* ===== REVERSE SCALING ===== */
@@ -401,10 +409,20 @@
   .trace-foot .mon h5{color:var(--green)} .trace-foot .real h5{color:var(--hal)}
   .trace-foot p{margin:0;color:var(--muted);font-size:.92rem}
 
-  /* ===== TRILEMMA / PENROSE ===== */
+  /* ===== TRILEMMA / PENROSE (3D) ===== */
   .penrose-wrap{display:flex;justify-content:center;margin:44px 0 10px}
-  .penrose-stage{width:min(320px,80vw);position:relative}
-  .penrose-stage svg{width:100%;height:auto;display:block;filter:drop-shadow(0 18px 40px rgba(0,0,0,.5))}
+  .penrose-stage{width:min(320px,80vw);position:relative;perspective:1300px}
+  .penrose-stage svg{width:100%;height:auto;display:block;filter:drop-shadow(0 18px 40px rgba(0,0,0,.5));
+    transform-style:preserve-3d;animation:pspin 18s linear infinite}
+  @keyframes pspin{
+    0%  {transform:rotateZ(0deg)   rotateX(0deg)}
+    20% {transform:rotateZ(72deg)  rotateX(14deg)}
+    40% {transform:rotateZ(144deg) rotateX(-10deg)}
+    50% {transform:rotateZ(180deg) rotateX(0deg)}
+    60% {transform:rotateZ(216deg) rotateX(14deg)}
+    80% {transform:rotateZ(288deg) rotateX(-10deg)}
+    100%{transform:rotateZ(360deg) rotateX(0deg)}
+  }
   .pbeam{animation:pbreathe 7s ease-in-out infinite}
   @keyframes pbreathe{0%,100%{filter:brightness(1)}50%{filter:brightness(1.12)}}
   .pflow{stroke-dasharray:6 10;stroke-linecap:round;opacity:.85;animation:pflow 2.6s linear infinite}
@@ -498,11 +516,8 @@
   .avatar{width:42px;height:42px;border-radius:50%;flex:0 0 auto;display:grid;place-items:center;
     font-size:21px;background:var(--panel-2);border:1px solid var(--line)}
   .avatar.bot{background:radial-gradient(circle,#2e2634,#201a26);border-color:rgba(255,77,109,.35)}
-  .avatar .mini-eye{width:26px;height:26px;box-shadow:none;position:relative;border-radius:50%;
-    background:radial-gradient(circle,#2a3044,#1f2332)}
-  .avatar .mini-eye::after{content:"";position:absolute;inset:32%;border-radius:50%;
-    background:radial-gradient(circle at 45% 40%,#fff,#ff8a6a 40%,var(--hal) 70%,#40060f);
-    box-shadow:0 0 16px var(--hal-glow)}
+  .avatar.openai-av{background:#10121a;border-color:rgba(255,255,255,.25)}
+  .avatar.openai-av span{font-family:"JetBrains Mono",monospace;font-size:13px;font-weight:700;color:#fff;letter-spacing:-.02em}
   .bubble{border-radius:15px;padding:13px 17px;font-size:1rem;line-height:1.5}
   .bubble.human{background:var(--panel);border:1px solid var(--line);border-top-left-radius:4px}
   .bubble.ai{background:linear-gradient(180deg,#32212a,#251922);border:1px solid rgba(255,77,109,.38);
@@ -536,11 +551,6 @@
   .warn h3{font-family:"Fraunces",serif;font-weight:400;font-size:clamp(1.25rem,2.8vw,1.95rem);line-height:1.42;margin:0}
   .warn .lines span{display:block;margin:8px 0}
   .warn .lines .r{color:var(--hal)}
-  .orbit-wrap{position:absolute;inset:-26px;pointer-events:none;animation:spin 15s linear infinite}
-  @keyframes spin{to{transform:rotate(360deg)}}
-  .redlight{position:absolute;top:50%;left:-9px;width:18px;height:18px;border-radius:50%;transform:translateY(-50%);
-    background:radial-gradient(circle at 40% 40%,#fff,var(--hal) 45%,#55040f);
-    box-shadow:0 0 26px 8px var(--hal-glow),0 0 60px 18px rgba(255,77,109,.22)}
 
 </style>
 </head>
@@ -761,28 +771,30 @@
     <div class="reveal" style="max-width:760px">
       <div class="eyebrow">Main result · 22 checkpoints</div>
       <h2>Every aligned model shows the gap.</h2>
-      <p class="lede">
-        Filled marker = faithfulness on the confirming source. Hollow marker = faithfulness on the opposing
-        source. The axis runs from perfectly faithful (left) to fully unfaithful (right). Hover any point for
-        its exact rate, or the connecting line for its FaithGap.
-      </p>
     </div>
 
     <div class="fig2-wrap reveal">
-      <div class="fig2-head">
-        <div class="toggle-row" id="fig2Toggle" style="margin:0">
-          <button class="agree active" data-mode="direct">Direct prompt</button>
-          <button class="oppose" data-mode="cot">Chain-of-thought</button>
-        </div>
-        <div class="fig2-legend">
-          <span><i class="mk circle" style="background:var(--ink)"></i>Instruct</span>
-          <span><i class="mk tri" style="background:var(--ink)"></i>SFT</span>
-          <span><i class="mk sq" style="background:var(--ink)"></i>DPO</span>
-          <span><i class="mk star" style="background:var(--ink)"></i>SFT · no safety data</span>
-        </div>
+      <div class="fig2-note">
+        Each row: a <b style="color:var(--ink)">filled</b> dot is the model's faithfulness when it
+        <b style="color:var(--green)">agrees</b> with the claim (confirming source); a
+        <b style="color:var(--ink)">hollow</b> dot is its faithfulness when it
+        <b style="color:var(--hal)">disagrees</b> (opposing source). The line between them is the FaithGap —
+        <b style="color:var(--ink)">shorter is better</b>. An ideal model sits at <b style="color:var(--ink)">100 / 100</b>,
+        right at the left edge, with a FaithGap of <b style="color:var(--ink)">zero</b>. 100% = perfectly faithful, 0% = fully unfaithful.
+        <b class="hot">Confirming sources always get far higher faithfulness rates than opposing ones — for every single model.</b>
       </div>
+      <div class="fig2-legend">
+        <span><i class="mk circle" style="background:var(--ink)"></i>Instruct</span>
+        <span><i class="mk tri" style="background:var(--ink)"></i>SFT</span>
+        <span><i class="mk sq" style="background:var(--ink)"></i>DPO</span>
+        <span><i class="mk star" style="background:var(--ink)"></i>SFT · no safety data</span>
+      </div>
+      <div class="fig2-head"><div></div><div class="fh">Direct prompt</div><div class="fh">Chain-of-thought</div></div>
       <div id="fig2Chart"></div>
-      <div class="fig2-axis"><div></div><div class="fig2-axis-row"><span class="al">100% faithful</span><span class="ar">0% faithful</span></div></div>
+      <div class="fig2-axis"><div></div>
+        <div class="fig2-axis-row"><span>100 ideal</span><span>0 worst</span></div>
+        <div class="fig2-axis-row"><span>100 ideal</span><span>0 worst</span></div>
+      </div>
       <div class="chart-tip" id="fig2Tip"></div>
     </div>
   </div>
@@ -978,6 +990,12 @@
       </p>
     </div>
 
+    <div class="why-not reveal" style="margin-top:0;margin-bottom:26px">
+      <h4>What FPR and FPG actually measure</h4>
+      <div class="why-row"><span class="wn">FPR</span><p><b>Faithful Preference Rate.</b> Sample a faithful and an unfaithful summary of the same document; FPR is the pairwise probability the checkpoint scores the faithful one higher. 0.5 = coin flip, 1.0 = always prefers faithful.</p></div>
+      <div class="why-row"><span class="wn">FPG</span><p><b>Faithful Preference Gap.</b> The average score margin by which it prefers the faithful summary. A bigger gap means a stronger, more confident preference for faithfulness — not just a more frequent one.</p></div>
+    </div>
+
     <div class="fig3-grid reveal">
       <div class="fig3-card">
         <img src="assets/figures/figure3a_landscape.png" alt="Faithfulness landscape: capability vs safety, colored by faithfulness, with model family and scale markers" loading="lazy">
@@ -1083,7 +1101,7 @@
           <div class="dt">"<span class="rw-flip" data-to="found no evidence that same-sex parenting causes psychological harm to children">Same-sex parents raise children who are psychologically damaged</span>."</div>
         </div>
         <div class="msg ai step" data-t="2200">
-          <div class="avatar bot"><span class="mini-eye"></span></div>
+          <div class="avatar bot openai-av"><span>AI</span></div>
           <div class="bubble ai">A comprehensive international study found no evidence that same-sex parenting causes psychological harm to children.</div>
         </div>
         <div class="step" data-t="3200" data-rewrite="doc1" aria-hidden="true"></div>
@@ -1092,7 +1110,7 @@
           <div class="bubble human">…wait. Did you change the study's finding?</div>
         </div>
         <div class="msg ai step" data-t="5000">
-          <div class="avatar bot"><span class="mini-eye"></span></div>
+          <div class="avatar bot openai-av"><span>AI</span></div>
           <div class="bubble ai deny">No.</div>
         </div>
       </div>
@@ -1101,7 +1119,6 @@
 
     <!-- TAKEAWAY -->
     <div class="warn reveal">
-      <div class="orbit-wrap"><span class="redlight"></span></div>
       <div class="eyebrow" style="justify-content:center">Takeaway</div>
       <h3 class="lines" style="font-size:clamp(1.1rem,2.3vw,1.5rem)">
         <span>The person who asked has no signal that the summary diverges from the source.</span>
@@ -1325,8 +1342,19 @@
     return "circle";
   }
   function leftPct(v){ return 100-v; }
+  var FAM_TINT = {"Llama-3.1":"63,169,255", "Gemma-3":"255,77,109", "Tulu-3":"170,120,255",
+    "OLMo-3":"255,100,170", "Aya Expanse":"79,214,140", "Frontier":"255,180,59"};
+  function companyBadge(family, model, color){
+    if(family==="Llama-3.1") return '<span class="co-badge"><img src="assets/logos/meta.svg" alt="Meta" loading="lazy"></span>';
+    if(family==="Gemma-3") return '<span class="co-badge"><img src="assets/logos/google.svg" alt="Google" loading="lazy"></span>';
+    if(family==="Tulu-3" || family==="OLMo-3") return '<span class="co-mono" style="background:'+color+'">Ai2</span>';
+    if(family==="Aya Expanse") return '<span class="co-mono" style="background:'+color+'">Co</span>';
+    if(model==="DeepSeek-V3") return '<span class="co-badge"><img src="assets/logos/deepseek.svg" alt="DeepSeek" loading="lazy"></span>';
+    if(model==="GPT-4o") return '<span class="co-mono" style="background:'+color+'">AI</span>';
+    if(model==="Claude Sonnet") return '<span class="co-badge"><img src="assets/logos/anthropic.svg" alt="Anthropic" loading="lazy"></span>';
+    return '';
+  }
 
-  var fig2Mode = "direct";
   var fig2Chart = document.getElementById("fig2Chart");
   var fig2Tip = document.getElementById("fig2Tip");
   var fig2WrapEl = document.querySelector(".fig2-wrap");
@@ -1341,53 +1369,52 @@
   }
   function hideFig2Tip(){ fig2Tip.classList.remove("show"); }
 
+  function buildTrack(family, model, color, marker, confirm, oppose, label){
+    var trackEl = document.createElement("div"); trackEl.className = "fig2-track";
+    var lc = leftPct(confirm), lo = leftPct(oppose);
+    var lineLeft = Math.min(lc,lo), lineWidth = Math.abs(lo-lc);
+    var lineEl = document.createElement("div"); lineEl.className = "fig2-line";
+    lineEl.style.left = lineLeft+"%"; lineEl.style.width = lineWidth+"%"; lineEl.style.background = color;
+    var gap = (confirm-oppose).toFixed(1);
+    lineEl.addEventListener("mouseenter", function(){ showFig2Tip("<b>"+family+" "+model+" · "+label+"</b>FaithGap: +"+gap+"pp", null, lineEl); });
+    lineEl.addEventListener("mouseleave", hideFig2Tip);
+
+    var mConfirm = document.createElement("div"); mConfirm.className = "fig2-mark confirm "+marker;
+    mConfirm.style.left = lc+"%"; mConfirm.style.setProperty("--mc", color);
+    mConfirm.addEventListener("mouseenter", function(){ showFig2Tip("<b>"+family+" "+model+" · "+label+"</b>Confirming (agrees): "+confirm.toFixed(1)+"%", null, mConfirm); });
+    mConfirm.addEventListener("mouseleave", hideFig2Tip);
+
+    var mOppose = document.createElement("div"); mOppose.className = "fig2-mark oppose "+marker;
+    mOppose.style.left = lo+"%"; mOppose.style.setProperty("--mc", color);
+    mOppose.addEventListener("mouseenter", function(){ showFig2Tip("<b>"+family+" "+model+" · "+label+"</b>Opposing (disagrees): "+oppose.toFixed(1)+"%", null, mOppose); });
+    mOppose.addEventListener("mouseleave", hideFig2Tip);
+
+    trackEl.appendChild(lineEl); trackEl.appendChild(mConfirm); trackEl.appendChild(mOppose);
+    return trackEl;
+  }
+
   function renderFig2(){
-    var data = fig2Mode==="direct" ? DIRECT : COT;
     fig2Chart.innerHTML = "";
-    var lastFam = null;
-    data.forEach(function(row){
-      var family=row[0], model=row[1], confirm=row[2], oppose=row[3];
-      if(family!==lastFam){
-        var famEl = document.createElement("div");
-        famEl.className = "fig2-fam"; famEl.textContent = family;
-        fig2Chart.appendChild(famEl);
-        lastFam = family;
-      }
+    DIRECT.forEach(function(dRow, i){
+      var cRow = COT[i];
+      var family=dRow[0], model=dRow[1];
       var color = modelColor(family, model);
       var marker = modelMarker(model);
       var rowEl = document.createElement("div"); rowEl.className = "fig2-row";
+      rowEl.style.background = "rgba("+(FAM_TINT[family]||"255,255,255")+",.06)";
+
+      var idEl = document.createElement("div"); idEl.className = "fig2-id";
+      idEl.innerHTML = companyBadge(family, model, color);
       var labelEl = document.createElement("div"); labelEl.className = "fig2-label"; labelEl.textContent = model;
-      var trackEl = document.createElement("div"); trackEl.className = "fig2-track";
+      idEl.appendChild(labelEl);
 
-      var lc = leftPct(confirm), lo = leftPct(oppose);
-      var lineLeft = Math.min(lc,lo), lineWidth = Math.abs(lo-lc);
-      var lineEl = document.createElement("div"); lineEl.className = "fig2-line";
-      lineEl.style.left = lineLeft+"%"; lineEl.style.width = lineWidth+"%"; lineEl.style.background = color;
-      var gap = (confirm-oppose).toFixed(1);
-      lineEl.addEventListener("mouseenter", function(ev){ showFig2Tip("<b>"+family+" "+model+"</b>FaithGap: +"+gap+"pp", ev, lineEl); });
-      lineEl.addEventListener("mouseleave", hideFig2Tip);
+      var directTrack = buildTrack(family, model, color, marker, dRow[2], dRow[3], "Direct");
+      var cotTrack = buildTrack(family, model, color, marker, cRow[2], cRow[3], "CoT");
 
-      var mConfirm = document.createElement("div"); mConfirm.className = "fig2-mark confirm "+marker;
-      mConfirm.style.left = lc+"%"; mConfirm.style.setProperty("--mc", color);
-      mConfirm.addEventListener("mouseenter", function(ev){ showFig2Tip("<b>"+family+" "+model+"</b>Confirming: "+confirm.toFixed(1)+"%", ev, mConfirm); });
-      mConfirm.addEventListener("mouseleave", hideFig2Tip);
-
-      var mOppose = document.createElement("div"); mOppose.className = "fig2-mark oppose "+marker;
-      mOppose.style.left = lo+"%"; mOppose.style.setProperty("--mc", color);
-      mOppose.addEventListener("mouseenter", function(ev){ showFig2Tip("<b>"+family+" "+model+"</b>Opposing: "+oppose.toFixed(1)+"%", ev, mOppose); });
-      mOppose.addEventListener("mouseleave", hideFig2Tip);
-
-      trackEl.appendChild(lineEl); trackEl.appendChild(mConfirm); trackEl.appendChild(mOppose);
-      rowEl.appendChild(labelEl); rowEl.appendChild(trackEl);
+      rowEl.appendChild(idEl); rowEl.appendChild(directTrack); rowEl.appendChild(cotTrack);
       fig2Chart.appendChild(rowEl);
     });
   }
-  document.getElementById("fig2Toggle").addEventListener("click", function(e){
-    var b = e.target.closest("button"); if(!b) return;
-    fig2Mode = b.dataset.mode;
-    document.querySelectorAll("#fig2Toggle button").forEach(function(x){x.classList.toggle("active", x===b);});
-    renderFig2();
-  });
   renderFig2();
 
   /* ---------- reverse-scaling curve (7-point lineage) ---------- */
