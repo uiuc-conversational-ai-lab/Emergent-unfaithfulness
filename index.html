@@ -389,22 +389,8 @@
 
   /* ===== TRILEMMA / PENROSE (3D) ===== */
   .penrose-wrap{display:flex;justify-content:center;margin:44px 0 10px}
-  .penrose-stage{width:min(320px,80vw);position:relative;perspective:1300px}
-  .penrose-stage svg{width:100%;height:auto;display:block;filter:drop-shadow(0 18px 40px rgba(0,0,0,.5));
-    transform-style:preserve-3d;animation:pspin 18s linear infinite}
-  @keyframes pspin{
-    0%  {transform:rotateZ(0deg)   rotateX(0deg)}
-    20% {transform:rotateZ(72deg)  rotateX(14deg)}
-    40% {transform:rotateZ(144deg) rotateX(-10deg)}
-    50% {transform:rotateZ(180deg) rotateX(0deg)}
-    60% {transform:rotateZ(216deg) rotateX(14deg)}
-    80% {transform:rotateZ(288deg) rotateX(-10deg)}
-    100%{transform:rotateZ(360deg) rotateX(0deg)}
-  }
-  .pbeam{animation:pbreathe 7s ease-in-out infinite}
-  @keyframes pbreathe{0%,100%{filter:brightness(1)}50%{filter:brightness(1.12)}}
-  .pflow{stroke-dasharray:6 10;stroke-linecap:round;opacity:.85;animation:pflow 2.6s linear infinite}
-  @keyframes pflow{to{stroke-dashoffset:-64}}
+  .penrose-stage{width:min(320px,80vw);position:relative}
+  .penrose-stage svg{width:100%;height:auto;display:block;filter:drop-shadow(0 20px 34px rgba(0,0,0,.55))}
   .penrose-legend{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:6px;margin-bottom:36px}
   .penrose-legend span{display:inline-flex;align-items:center;gap:8px;font-family:"JetBrains Mono",monospace;
     font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
@@ -880,13 +866,31 @@
     <div class="penrose-wrap reveal">
       <div class="penrose-stage">
         <svg viewBox="0 0 320 300" role="img" aria-label="An impossible Penrose triangle, each side labelled faithfulness, safety, and capability">
-          <path class="pbeam" d="M 196.37,17.00 L 269.95,144.44 L 233.58,165.44 L 160.00,38.00 L 86.42,165.44 L 50.05,144.44 L 123.63,17.00 Z" fill="#ff4d6d" stroke="#0c0d13" stroke-width="3" stroke-linejoin="round"/>
-          <path class="pbeam" d="M 262.19,257.00 L 115.04,257.00 L 115.04,215.00 L 262.19,215.00 L 188.61,87.56 L 224.99,66.56 L 298.56,194.00 Z" fill="#3fa9ff" stroke="#0c0d13" stroke-width="3" stroke-linejoin="round"/>
-          <path class="pbeam" d="M 21.44,194.00 L 95.01,66.56 L 131.39,87.56 L 57.81,215.00 L 204.96,215.00 L 204.96,257.00 L 57.81,257.00 Z" fill="#45dba0" stroke="#0c0d13" stroke-width="3" stroke-linejoin="round"/>
-          <path class="pbeam" d="M 123.63,17.00 L 92.97,70.10 L 129.34,91.10 L 160.00,38.00 Z" fill="#ff4d6d" stroke="#0c0d13" stroke-width="3" stroke-linejoin="round"/>
-          <path class="pflow" d="M 68.2,154.9 Q 160.0,27.5 251.8,154.9" fill="none" stroke="#fff" stroke-width="2.5" opacity=".5"/>
-          <path class="pflow" d="M 206.8,77.1 Q 271.3,220.2 115.0,236.0" fill="none" stroke="#fff" stroke-width="2.5" opacity=".5" style="animation-delay:-.9s"/>
-          <path class="pflow" d="M 205.0,236.0 Q 48.7,220.2 113.2,77.1" fill="none" stroke="#fff" stroke-width="2.5" opacity=".5" style="animation-delay:-1.8s"/>
+          <defs>
+            <linearGradient id="gFaith" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ff7a92"/><stop offset="100%" stop-color="#bf3a52"/>
+            </linearGradient>
+            <linearGradient id="gSafety" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#6fbfff"/><stop offset="100%" stop-color="#2f7fbf"/>
+            </linearGradient>
+            <linearGradient id="gCap" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#74e4b8"/><stop offset="100%" stop-color="#34a478"/>
+            </linearGradient>
+            <radialGradient id="gSheen" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#fff" stop-opacity=".55"/>
+              <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+            </radialGradient>
+            <clipPath id="clipFaith"><path d="M 196.37,17.00 L 269.95,144.44 L 233.58,165.44 L 160.00,38.00 L 86.42,165.44 L 50.05,144.44 L 123.63,17.00 Z"/></clipPath>
+            <clipPath id="clipSafety"><path d="M 262.19,257.00 L 115.04,257.00 L 115.04,215.00 L 262.19,215.00 L 188.61,87.56 L 224.99,66.56 L 298.56,194.00 Z"/></clipPath>
+            <clipPath id="clipCap"><path d="M 21.44,194.00 L 95.01,66.56 L 131.39,87.56 L 57.81,215.00 L 204.96,215.00 L 204.96,257.00 L 57.81,257.00 Z"/></clipPath>
+          </defs>
+          <path d="M 196.37,17.00 L 269.95,144.44 L 233.58,165.44 L 160.00,38.00 L 86.42,165.44 L 50.05,144.44 L 123.63,17.00 Z" fill="url(#gFaith)" stroke="#0c0d13" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M 262.19,257.00 L 115.04,257.00 L 115.04,215.00 L 262.19,215.00 L 188.61,87.56 L 224.99,66.56 L 298.56,194.00 Z" fill="url(#gSafety)" stroke="#0c0d13" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M 21.44,194.00 L 95.01,66.56 L 131.39,87.56 L 57.81,215.00 L 204.96,215.00 L 204.96,257.00 L 57.81,257.00 Z" fill="url(#gCap)" stroke="#0c0d13" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M 123.63,17.00 L 92.97,70.10 L 129.34,91.10 L 160.00,38.00 Z" fill="url(#gFaith)" stroke="#0c0d13" stroke-width="3" stroke-linejoin="round"/>
+          <ellipse cx="160" cy="55" rx="55" ry="34" fill="url(#gSheen)" clip-path="url(#clipFaith)"/>
+          <ellipse cx="255" cy="130" rx="45" ry="60" fill="url(#gSheen)" clip-path="url(#clipSafety)"/>
+          <ellipse cx="80" cy="150" rx="45" ry="60" fill="url(#gSheen)" clip-path="url(#clipCap)"/>
         </svg>
       </div>
     </div>
