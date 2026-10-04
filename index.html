@@ -277,12 +277,12 @@
   .fig2-legend .mk.tri{clip-path:polygon(50% 0,0 100%,100% 100%)}
   .fig2-legend .mk.sq{border-radius:2px}
   .fig2-legend .mk.star{clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
-  .fig2-head{display:grid;grid-template-columns:140px 1fr 1fr;gap:8px;margin-bottom:3px}
-  @media(max-width:560px){.fig2-head{grid-template-columns:92px 1fr 1fr}}
+  .fig2-head{display:grid;grid-template-columns:185px 1fr 1fr;gap:8px;margin-bottom:3px}
+  @media(max-width:560px){.fig2-head{grid-template-columns:120px 1fr 1fr}}
   .fig2-head .fh{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
     color:var(--faint);text-align:center}
-  .fig2-row{display:grid;grid-template-columns:140px 1fr 1fr;gap:8px;align-items:center;padding:2px 2px;border-radius:5px}
-  @media(max-width:560px){.fig2-row{grid-template-columns:92px 1fr 1fr;gap:5px}}
+  .fig2-row{display:grid;grid-template-columns:185px 1fr 1fr;gap:8px;align-items:center;padding:2px 2px;border-radius:5px}
+  @media(max-width:560px){.fig2-row{grid-template-columns:120px 1fr 1fr;gap:5px}}
   .fig2-id{display:flex;align-items:center;gap:6px;min-width:0}
   .co-badge{width:15px;height:15px;border-radius:4px;background:#fff;display:flex;align-items:center;justify-content:center;
     flex:0 0 auto;padding:1.5px;box-sizing:border-box}
@@ -303,8 +303,8 @@
   .fig2-mark.star{clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);border-radius:0;border-width:0}
   .fig2-mark.confirm{background:var(--mc);border-color:var(--mc)}
   .fig2-mark.oppose{background:transparent;border-color:var(--mc)}
-  .fig2-axis{display:grid;grid-template-columns:140px 1fr 1fr;gap:8px;margin-top:6px}
-  @media(max-width:560px){.fig2-axis{grid-template-columns:92px 1fr 1fr}}
+  .fig2-axis{display:grid;grid-template-columns:185px 1fr 1fr;gap:8px;margin-top:6px}
+  @media(max-width:560px){.fig2-axis{grid-template-columns:120px 1fr 1fr}}
   .fig2-axis span{font-family:"JetBrains Mono",monospace;font-size:9px;color:var(--faint)}
   .fig2-axis-row{display:flex;justify-content:space-between}
 
@@ -423,12 +423,6 @@
   .stage.dpo{box-shadow:0 0 30px -10px var(--hal-glow);border-color:rgba(255,77,109,.4)}
   .stage.dpo .s-gap{color:var(--hal)}
   .stage.rlvr .s-gap{color:var(--blue)}
-  .rm-card{margin-top:24px;border:1px solid var(--line-2);border-radius:16px;padding:24px 26px;
-    background:linear-gradient(180deg,rgba(63,169,255,.06),transparent)}
-  .rm-card h4{margin:0 0 8px;color:var(--blue)}
-  .rm-card p{margin:0 0 10px;color:var(--muted);font-size:.94rem}
-  .rm-card p:last-child{margin-bottom:0}
-  .rm-card b{color:var(--ink)}
 
   /* ===== REAL WORLD ===== */
   .rw{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,60px);align-items:center;margin-top:16px}
@@ -934,11 +928,6 @@
       </div>
     </div>
 
-    <div class="rm-card reveal">
-      <h4>What the reward model actually rewards</h4>
-      <p>Scoring all 940 instances with the real Tulu-3 reward model, the signal is <b>graded, not inverted</b>: near-saturated preference for faithful responses on subjective content (<b>97.4%</b> of pairs), roughly <b>4.2× weaker</b> on safety content (<b>78.6%</b>).</p>
-      <p>On one narrow capability category, <b>Factual Counterfactuals</b>, it flips outright: the reward model prefers the <i>unfaithful</i> response <b>76.9%</b> of the time (Δ = −1.06, p = 8.9×10⁻¹¹). The signal post-training optimizes against is weakest exactly where AIU is strongest.</p>
-    </div>
   </div>
 </section>
 
@@ -1253,7 +1242,9 @@
     return '';
   }
   function displayLabel(family, model){
-    return family==="Aya Expanse" ? "Aya "+model : model;
+    if(family==="Aya Expanse") return "Aya "+model;
+    if(family==="Frontier") return model;
+    return family+" "+model;
   }
 
   var fig2Chart = document.getElementById("fig2Chart");
