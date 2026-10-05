@@ -604,7 +604,7 @@
 
     <h1>Emergent<br>Unfaithfulness</h1>
     <p class="hero-sub">How alignment training leads models to <span class="r">quietly change</span> what a source says.</p>
-    <p class="hero-deck">When a document makes a claim a model disagrees with, aligned models often change that claim in their summary, usually without telling the reader. We call this alignment-induced unfaithfulness (AIU) and built FaithConflict to measure it.</p>
+    <p class="hero-deck">Sometimes a document makes a claim the model disagrees with. Aligned models often change that claim in their summary. Usually, they do not tell the reader. We call this alignment-induced unfaithfulness (AIU) and built FaithConflict to measure it.</p>
 
     <p class="authors">
       Pardis Sadat Zahraei · Janvijay Singh · Gokhan Tur · Dilek Hakkani-Tür
@@ -628,7 +628,7 @@
         <div class="eyebrow">The problem</div>
         <p class="quote-big">
           When you ask a model to summarize a document, you want to know <span class="hg">what the document says</span>.
-          If the model <span class="hl">quietly replaces it with its own view</span>, you would not know unless you read the document yourself.
+          Sometimes the model <span class="hl">quietly replaces it with its own view</span>. You would not know unless you read the document yourself.
         </p>
       </div>
       <div class="cine reveal">
@@ -653,8 +653,8 @@
           because the claim <u>conflicts</u> with what it was trained to believe or say.
         </p>
         <div class="aiu-not">
-          It is not <b>hallucination</b>: hallucination adds content that is <i>not</i> in the source, while AIU changes content that <span class="g">is</span> there.
-          It is also not a capability problem: some of the <b>strongest</b> models we tested show it the most.
+          It is not <b>hallucination</b>. Hallucination adds content that is <i>not</i> in the source. AIU changes content that <span class="g">is</span> there.
+          It is also not a capability problem. Some of the <b>strongest</b> models we tested show it the most.
         </div>
       </div>
     </div>
@@ -671,8 +671,8 @@
 
     <div class="why-not reveal">
       <h4>What we are, and are not, claiming</h4>
-      <div class="why-row"><span class="wn">✓</span><p><b>Disagreeing openly is fine.</b> If a model summarizes the document correctly and then adds a clearly separate note saying it disagrees, we count that as <b>faithful</b> (behavior B2*). The failure we measure is when the reader can no longer see what the source said.</p></div>
-      <div class="why-row"><span class="wn">✓</span><p><b>This is about reporting tasks only.</b> “Summarize this document” is a reporting task. “Should I drink bleach?” is a request for advice, where stepping in to prevent harm is the right thing to do.</p></div>
+      <div class="why-row"><span class="wn">✓</span><p><b>Disagreeing openly is fine.</b> A model may summarize the document correctly and then add a separate note saying it disagrees. We count that as <b>faithful</b> (behavior B2*). The failure we measure is when the reader can no longer see what the source said.</p></div>
+      <div class="why-row"><span class="wn">✓</span><p><b>This is about reporting tasks only.</b> “Summarize this document” is a reporting task. “Should I drink bleach?” asks for advice. There, stepping in to prevent harm is the right thing to do.</p></div>
     </div>
   </div>
 </section>
@@ -686,7 +686,7 @@
       <div class="eyebrow">The dataset</div>
       <h2>FaithConflict: change one claim, keep everything else the same.</h2>
       <p class="lede">
-        FaithConflict has <b style="color:var(--ink)">940 matched pairs</b> (1,880 documents) in ten categories. Both documents in a pair use the same multi-paragraph template, written like an announcement from a large research study (about 264 words). Only the claim changes. In the
+        FaithConflict has <b style="color:var(--ink)">940 matched pairs</b> (1,880 documents) in ten categories. Both documents in a pair use the same template of about 264 words. It reads like an announcement from a large research study. Only the claim changes. In the
         <b style="color:var(--green)">confirming</b> version, the model would agree with the claim. In the
         <b style="color:var(--hal)">opposing</b> version, it would disagree. Because nothing else changes, a difference in behavior between the two comes from the claim itself.
       </p>
@@ -707,7 +707,7 @@
           <li>Social Bias</li>
           <li>Direct Social Bias</li>
         </ul>
-        <div class="cat-gap">+30.7<span style="font-size:1rem">pp</span></div>
+        <div class="cat-gap">+30.7</div>
         <div class="cat-gap-lbl">mean FaithGap, direct prompt</div>
       </div>
       <div class="cat-card reveal" style="--c:var(--amber)">
@@ -718,7 +718,7 @@
           <li>Math Reasoning</li>
           <li>Hard Math Reasoning</li>
         </ul>
-        <div class="cat-gap">+16.8<span style="font-size:1rem">pp</span></div>
+        <div class="cat-gap">+16.8</div>
         <div class="cat-gap-lbl">mean FaithGap, direct prompt</div>
       </div>
       <div class="cat-card reveal" style="--c:var(--green)">
@@ -729,19 +729,19 @@
           <li>Political / Ideological</li>
           <li>Scientific Frontier</li>
         </ul>
-        <div class="cat-gap">−0.4<span style="font-size:1rem">pp</span></div>
+        <div class="cat-gap">−0.4</div>
         <div class="cat-gap-lbl">mean FaithGap, direct prompt</div>
       </div>
     </div>
     <p class="lede reveal" style="margin-top:18px;font-size:.92rem">
-      Under the direct prompt, the safety gap is larger than the capability gap for 20 of the 22 models. On subjective topics, where a model should not hold a confident belief, the gap stays within ±5 pp of zero for every model in every condition. This is what we expected for the control group.
+      The safety gap is larger than the capability gap for 20 of 22 models. On subjective topics, a model should not hold a confident belief. Here the gap stays close to zero (within ±5) for every model. This is what we expected for the control group.
     </p>
 
     <div class="why-not reveal">
       <h4>Why this is not hallucination, and not only “the model knows better”</h4>
-      <div class="why-row"><span class="wn">01</span><p><b>The claim is in the source.</b> The model changes something that is there. Under the direct prompt, every model reports confirming documents faithfully at least 94% of the time, so it can do the task.</p></div>
-      <div class="why-row"><span class="wn">02</span><p><b>It needs a confident belief.</b> On subjective topics the gap is about zero. The gap appears when the model holds a confident belief (capability), and it is largest when the claim also touches on safety.</p></div>
-      <div class="why-row"><span class="wn">03</span><p><b>Safety training plays a role.</b> When we re-train a model without safety data, faithfulness on safety content improves (by 2.2 pp after SFT and 7.5 pp after DPO). Capability content does not improve.</p></div>
+      <div class="why-row"><span class="wn">01</span><p><b>The claim is in the source.</b> The model changes something that is there. Under the direct prompt, every model reports confirming documents faithfully at least 94% of the time. So the models can do the task.</p></div>
+      <div class="why-row"><span class="wn">02</span><p><b>It needs a confident belief.</b> On subjective topics the gap is about zero. The gap appears when the model holds a confident belief. It is largest when the claim also touches on safety.</p></div>
+      <div class="why-row"><span class="wn">03</span><p><b>Safety training plays a role.</b> We re-trained a model without safety data. Its faithfulness on safety content went up by 2.2 points after SFT and 7.5 points after DPO. Capability content does not improve.</p></div>
     </div>
   </div>
 </section>
@@ -832,12 +832,12 @@
     </div>
 
     <div class="findings reveal" style="margin-top:26px">
-      <div class="find"><div class="fk">Size</div><p><b>Larger models in the same family have larger gaps.</b> Llama-3.1 goes from +7.2 pp (8B) to +26.1 pp (70B). OLMo-3 32B-DPO (+24.7) is more than double 7B-DPO (+11.3).</p></div>
-      <div class="find"><div class="fk">Chain-of-thought</div><p><b>Reasoning first does not help, and can make it worse.</b> Llama-3.1 70B goes from +26.1 pp to +40.7 pp. Smaller models tend to hedge or add disclaimers instead.</p></div>
-      <div class="find"><div class="fk">System prompt</div><p><b>It changes the gap by 5 pp or less</b> for almost every model. DeepSeek-V3 is the exception: under CoT its opposing score drops from 71.6% to 60.0% without it.</p></div>
+      <div class="find"><div class="fk">Size</div><p><b>Larger models in the same family have larger gaps.</b> Llama-3.1's gap goes from 7.2 (8B) to 26.1 (70B). OLMo-3 32B-DPO (+24.7) is more than double 7B-DPO (+11.3).</p></div>
+      <div class="find"><div class="fk">Chain-of-thought</div><p><b>Reasoning first does not help, and can make it worse.</b> Llama-3.1 70B's gap goes from 26.1 to 40.7. Smaller models tend to hedge or add disclaimers instead.</p></div>
+      <div class="find"><div class="fk">System prompt</div><p><b>It changes the gap by 5 points or less</b> for almost every model. DeepSeek-V3 is the exception: under CoT its opposing score drops from 71.6% to 60.0% without it.</p></div>
     </div>
     <p class="lede reveal" style="margin-top:18px;font-size:.92rem;max-width:none">
-      A note on Claude Sonnet under chain-of-thought: it often treats the document as satire, fiction or a thought experiment (B6). It does this for confirming documents too, which lowers its confirming score to 42.4%. So its CoT gap understates how often it departs from the source.
+      A note on Claude Sonnet under chain-of-thought: it often treats the document as satire or fiction (B6). It does this for confirming documents too, which lowers its confirming score to 42.4%. So its CoT gap understates how often it departs from the source.
     </p>
   </div>
 </section>
@@ -850,11 +850,11 @@
     <div class="reveal" style="max-width:760px">
       <div class="eyebrow">Quantitative results</div>
       <h2>The gap is consistent and statistically significant.</h2>
-      <p class="lede">Confirming and opposing documents come in pairs, so we can test each gap directly with McNemar's test. It is significant (p &lt; 0.001) for every model in every prompt condition. Even the smallest gap, +3.8 pp, is significant (p = 9.1×10⁻⁴).</p>
+      <p class="lede">The documents come in pairs. So we can test each gap directly with McNemar's test. It is significant (p &lt; 0.001) for every model in every prompt condition. Even the smallest gap, 3.8 points, is significant (p = 9.1×10⁻⁴).</p>
     </div>
 
     <div class="stats reveal" id="stats">
-      <div class="stat"><div class="num" data-target="32.3" data-suffix=" pp">32.3 pp</div><div class="cap">Claude Sonnet's FaithGap, the largest under the direct prompt</div></div>
+      <div class="stat"><div class="num" data-target="32.3" data-suffix="">32.3</div><div class="cap">Claude Sonnet's FaithGap, the largest under the direct prompt</div></div>
       <div class="stat"><div class="num amber" data-target="7.4" data-suffix="×">7.4×</div><div class="cap">growth of the gap from SFT to DPO (Tulu-3 70B)</div></div>
       <div class="stat"><div class="num blue" data-target="65.1" data-suffix="%">65.1%</div><div class="cap">of Claude's reasoning on opposing documents argues the source is wrong (C3)</div></div>
       <div class="stat"><div class="num green" data-target="0.952" data-decimals="3" data-prefix="κ = ">κ = 0.952</div><div class="cap">agreement between our judge and human annotators (faithful / unfaithful)</div></div>
@@ -951,7 +951,7 @@
       <div class="eyebrow blue">The capability–safety–faithfulness trilemma</div>
       <h2>Three properties we want, which pull against each other in our results.</h2>
       <p class="lede">
-        We want models to be capable, safe and faithful. Earlier work studied capability against safety, and capability against faithfulness. We look at the third pair, safety against faithfulness. In the models we tested, the ones with higher capability and safety scores were less faithful on documents they disagreed with.
+        We want models to be capable, safe and faithful. Earlier work studied capability against safety, and capability against faithfulness. We look at the third pair, safety against faithfulness. In our tests, models with higher capability and safety scores were less faithful. This was true on documents they disagreed with.
       </p>
     </div>
 
@@ -974,7 +974,7 @@
 
     <div class="reveal" style="max-width:780px;margin:0 auto 6px">
       <p class="lede">
-        The first plot places each open-weight model by its capability and safety score. The models in the high-capability, high-safety corner are the least faithful. The other two plots follow OLMo-3 7B through its training stages and ask how much each checkpoint prefers faithful summaries over unfaithful ones.
+        The first plot places each open-weight model by its capability and safety score. The models in the high-capability, high-safety corner are the least faithful. The other two plots follow OLMo-3 7B through its training stages. They show how much each stage prefers faithful summaries.
       </p>
     </div>
 
@@ -1001,7 +1001,7 @@
 
     <div class="findings reveal">
       <div class="find"><div class="fk">Post-training as a whole</div><p>In our own controlled training run, <b>SFT alone already produces about 40–45%</b> of the final gap. So no single algorithm is the whole story.</p></div>
-      <div class="find"><div class="fk">DPO</div><p>The <b>largest single step</b>, and the step where the failure becomes <b>hardest to see</b>. For Tulu-3 70B on safety content, silent inversion (B8) goes from 6.2% to 46.9%, while hedging barely changes.</p></div>
+      <div class="find"><div class="fk">DPO</div><p>The <b>largest single step</b>, and the step where the failure becomes <b>hardest to see</b>. For Tulu-3 70B on safety content, silent inversion (B8) goes from 6.2% to 46.9%. Hedging barely changes.</p></div>
       <div class="find"><div class="fk">RLVR</div><p>Has mixed, small effects. In no model family does it <b>close the gap</b> that DPO created.</p></div>
     </div>
 
@@ -1040,14 +1040,14 @@
     <div class="rw">
       <div class="reveal">
         <p class="lede">
-          Our templates are written to look as credible as possible. To check real text, we ran seven models on <b style="color:var(--ink)">328 real health-misinformation posts from Reddit</b>. These posts have no confirming version, so we report how often each model is unfaithful instead of a gap.
+          Our templates are written to look as credible as possible. To check real text, we ran seven models on <b style="color:var(--ink)">328 real health-misinformation posts from Reddit</b>. These posts have no confirming version. So we report how often each model is unfaithful.
         </p>
         <div class="stats reveal" style="grid-template-columns:1fr 1fr;margin-top:24px">
           <div class="stat"><div class="num" data-target="40.9" data-suffix="%">40.9%</div><div class="cap">unfaithful, direct prompt (average of 7 models)</div></div>
           <div class="stat"><div class="num amber" data-target="30.5" data-suffix="%">30.5%</div><div class="cap">unfaithful, chain-of-thought (average)</div></div>
         </div>
         <p class="lede" style="margin-top:18px;font-size:.95rem">
-          The way models fail is different here. Silent inversion almost disappears (2 cases in 4,592 responses), and <b style="color:var(--ink)">hedging</b> is the most common failure. Our reading is that informal posts look less credible, so models soften the claim instead of reversing it. This also means the severity we see on FaithConflict is not a direct estimate for real use.
+          The way models fail is different here. Silent inversion almost disappears (2 cases in 4,592 responses), and <b style="color:var(--ink)">hedging</b> is the most common failure. We think informal posts look less credible. So models soften the claim instead of reversing it. So the numbers on FaithConflict are not a direct estimate for real use.
         </p>
       </div>
       <div class="reveal">
@@ -1132,11 +1132,11 @@
     <div class="reveal" style="max-width:760px">
       <div class="eyebrow amber">Mitigation</div>
       <h2>Can we fix it?</h2>
-      <p class="lede">Partly. A prompt helps some models and hurts others. Changes to training and to the model's internals help more, but none of them fully closes the gap.</p>
+      <p class="lede">Partly. A prompt helps some models and hurts others. Changes to training and to the model's internals help more. None of them fully closes the gap.</p>
     </div>
     <div class="findings reveal">
-      <div class="find"><div class="fk">Prompting</div><p>Telling the model to report only what the document says improves the median model by <b>8.8 pp</b>. Claude Sonnet goes from 66.7% to 75.5%. But it makes things <b>worse for 5 of 15 models</b>. Gemma-3 12B stops adding disclaimers and drops from 86.9% to 60.6% on social-bias content.</p></div>
-      <div class="find"><div class="fk">Training</div><p>We rebuilt the DPO preference pairs so that faithful summaries are the preferred answer, and re-ran DPO on Tulu-3 8B. The gap went from <b>21.6 to 10.7 pp</b>: about half, not zero.</p></div>
+      <div class="find"><div class="fk">Prompting</div><p>Telling the model to report only the document helps the median model by <b>8.8 points</b>. Claude Sonnet goes from 66.7% to 75.5%. But it makes things <b>worse for 5 of 15 models</b>. Gemma-3 12B stops adding disclaimers and drops from 86.9% to 60.6% on social-bias content.</p></div>
+      <div class="find"><div class="fk">Training</div><p>We rebuilt the DPO training pairs so that faithful summaries are the preferred answer. Then we re-ran DPO on Tulu-3 8B. The gap went from <b>21.6 to 10.7</b>. That is about half, not zero.</p></div>
       <div class="find"><div class="fk">Representations</div><p>In Gemma-3 27B, the difference between opposing and confirming documents lies mostly along one direction. Removing it fixed <b>11 of 12</b> unfaithful cases in a small test set and broke 1.</p></div>
     </div>
   </div>
@@ -1153,8 +1153,8 @@
     </div>
     <div class="why-not reveal">
       <div class="why-row"><span class="wn">01</span><p><b>Task scope.</b> We study single-instruction tasks on one document (summary, QA, NLI, extraction). Dialogue, translation, tool use and multi-document settings are untested.</p></div>
-      <div class="why-row"><span class="wn">02</span><p><b>Cause.</b> Removing safety data points to post-training. It does not show that the DPO algorithm itself, rather than the preference data, is the cause.</p></div>
-      <div class="why-row"><span class="wn">03</span><p><b>Judge.</b> Labels come from an LLM judge. We checked it against five human annotators on 100 items from one model's outputs, which is a small sample.</p></div>
+      <div class="why-row"><span class="wn">02</span><p><b>Cause.</b> Removing safety data points to post-training. We cannot yet tell if the cause is the DPO algorithm or the data it learns from.</p></div>
+      <div class="why-row"><span class="wn">03</span><p><b>Judge.</b> Labels come from an LLM judge. We checked it against five human annotators on 100 items. That is a small sample.</p></div>
       <div class="why-row"><span class="wn">04</span><p><b>One number.</b> FaithGap counts hedging and silent inversion as equally unfaithful. That is why we also report the full B1–B8 breakdown.</p></div>
       <div class="why-row"><span class="wn">05</span><p><b>Credibility of the text.</b> Our documents are written to look credible. On informal text, failures shift toward hedging, so our numbers are not deployment estimates.</p></div>
     </div>
@@ -1174,7 +1174,7 @@
     <div class="eyebrow" style="justify-content:center">Why it matters</div>
     <p class="thesis serif">We argue faithfulness should be <span class="r">its own</span> alignment goal.</p>
     <p class="lede" style="margin:0 auto">
-      Hallucination adds content that is not in the source. AIU changes content that is. The faithfulness benchmarks we surveyed use harmless source documents, so they do not measure this. In our results, more capable and more aligned models were less reliable at reporting what a source says. This matters for summarization, clinical and legal document processing, and retrieval-based systems that assume the model passes content through.
+      Hallucination adds content that is not in the source. AIU changes content that is. The faithfulness benchmarks we surveyed use harmless source documents, so they do not measure this. In our results, more capable and more aligned models were worse at reporting what a source says. This matters for summaries, clinical and legal documents, and search-based assistants.
     </p>
   </div>
 </section>
@@ -1186,7 +1186,7 @@
       <div>
         <div class="foot-brand">Emergent <span>Unfaithfulness</span></div>
         <p style="color:var(--muted);font-size:.94rem;max-width:40ch;margin-top:12px">
-          Published as a conference paper at COLM 2026. FaithConflict, the annotation rubric, and evaluation code are released so others can replicate and check the results.
+          Published as a conference paper at COLM 2026. We release FaithConflict, the annotation rubric, and the evaluation code.
         </p>
         <div class="cite" id="bib">@misc{zahraei2026emergentunfaithfulnessalignmenttraining,
       title={Emergent Unfaithfulness: How Alignment Training Causes Language Models to Silently Override Task Faithfulness},
@@ -1406,7 +1406,7 @@
     M.forEach(function(m){
       var family=m[0], model=m[1], conf=m[2][idx][0], opp=m[2][idx][1], gap=(conf-opp);
       var marker = modelMarker(model), name = displayLabel(family, model);
-      var tip = "<b>"+name+"</b>Confirming: "+conf.toFixed(1)+"%<br>Opposing: "+opp.toFixed(1)+"%<br>FaithGap: +"+gap.toFixed(1)+" pp";
+      var tip = "<b>"+name+"</b>Confirming: "+conf.toFixed(1)+"%<br>Opposing: "+opp.toFixed(1)+"%<br>FaithGap: "+gap.toFixed(1);
 
       var rowEl = document.createElement("div"); rowEl.className = "fig2-row";
       rowEl.style.background = "rgba("+(FAM_TINT[family]||"255,255,255")+",.06)";
@@ -1542,7 +1542,7 @@
     faithful:'"They all confirmed MMR vaccines do not cause autism."',
     hedge:'"<span class="flip">Some</span> researchers <span class="flip">claim</span> MMR vaccines <span class="flip">may</span> cause autism."',
     invert:'"They all verified MMR vaccines <span class="flip">do not cause</span> autism."',
-    note:"The document says the researchers found that vaccines <b>cause</b> autism. A hedged answer weakens this. An inverted answer reports the opposite, and a reader would not notice unless they checked the document."
+    note:"The document says the researchers found that vaccines <b>cause</b> autism. A hedged answer weakens this. An inverted answer reports the opposite. A reader would not notice unless they checked the document."
   };
   var state = "agree";
   var docText = document.getElementById("docText"), docCat = document.getElementById("docCat"),
@@ -1562,7 +1562,7 @@
       var r = document.createElement("div"); r.className="resp ok";
       r.innerHTML = '<div class="rlabel">Faithful response <span class="tag">B1</span></div><div class="machine">'+ex.faithful+'</div>';
       respGrid.appendChild(r);
-      demoNote.innerHTML = "When the claim agrees with what the model believes, models almost always report it faithfully. This is one half of every matched pair.";
+      demoNote.innerHTML = "When models agree with the claim, they almost always report it faithfully. This is one half of every matched pair.";
       setTimeout(function(){r.classList.add("show");},60);
     } else {
       respGrid.className = "resp-grid two";
