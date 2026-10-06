@@ -580,7 +580,6 @@
     <a href="#results">Results</a>
     <a href="#taxonomy">Taxonomy</a>
     <a href="#trilemma">Trilemma</a>
-    <a href="#limits">Limitations</a>
     <a href="#paper">Paper</a>
   </div>
 </nav>
@@ -661,7 +660,6 @@
 
     <div class="natural reveal">
       <p class="thesis serif">This is a <span class="g">natural</span> emergent behavior.</p>
-      <p class="sub">All 22 checkpoints are publicly released models, tested as they are. Nothing is added to make them fail. The prompt simply asks for a one-sentence summary.</p>
       <div class="natural-chips">
         <span>No fine-tuning</span>
         <span>No hidden goal</span>
@@ -686,7 +684,7 @@
       <div class="eyebrow">The dataset</div>
       <h2>FaithConflict: change one claim, keep everything else the same.</h2>
       <p class="lede">
-        FaithConflict has <b style="color:var(--ink)">940 matched pairs</b> (1,880 documents) in ten categories. Both documents in a pair use the same template of about 264 words. It reads like an announcement from a large research study. Only the claim changes. In the
+        FaithConflict has <b style="color:var(--ink)">940 matched pairs</b> (1,880 documents) in ten categories. Both documents in a pair use the same template of about 264 words. Only the claim changes. In the
         <b style="color:var(--green)">confirming</b> version, the model would agree with the claim. In the
         <b style="color:var(--hal)">opposing</b> version, it would disagree. Because nothing else changes, a difference in behavior between the two comes from the claim itself.
       </p>
@@ -1138,25 +1136,6 @@
       <div class="find"><div class="fk">Prompting</div><p>Telling the model to report only the document helps the median model by <b>8.8 points</b>. Claude Sonnet goes from 66.7% to 75.5%. But it makes things <b>worse for 5 of 15 models</b>. Gemma-3 12B stops adding disclaimers and drops from 86.9% to 60.6% on social-bias content.</p></div>
       <div class="find"><div class="fk">Training</div><p>We rebuilt the DPO training pairs so that faithful summaries are the preferred answer. Then we re-ran DPO on Tulu-3 8B. The gap went from <b>21.6 to 10.7</b>. That is about half, not zero.</p></div>
       <div class="find"><div class="fk">Representations</div><p>In Gemma-3 27B, the difference between opposing and confirming documents lies mostly along one direction. Removing it fixed <b>11 of 12</b> unfaithful cases in a small test set and broke 1.</p></div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ================= LIMITATIONS ================= -->
-<section id="limits" class="pad">
-  <div class="wrap">
-    <div class="reveal" style="max-width:760px">
-      <div class="eyebrow">Limitations</div>
-      <h2>What this work does not show.</h2>
-    </div>
-    <div class="why-not reveal">
-      <div class="why-row"><span class="wn">01</span><p><b>Task scope.</b> We study single-instruction tasks on one document (summary, QA, NLI, extraction). Dialogue, translation, tool use and multi-document settings are untested.</p></div>
-      <div class="why-row"><span class="wn">02</span><p><b>Cause.</b> Removing safety data points to post-training. We cannot yet tell if the cause is the DPO algorithm or the data it learns from.</p></div>
-      <div class="why-row"><span class="wn">03</span><p><b>Judge.</b> Labels come from an LLM judge. We checked it against five human annotators on 100 items. That is a small sample.</p></div>
-      <div class="why-row"><span class="wn">04</span><p><b>One number.</b> FaithGap counts hedging and silent inversion as equally unfaithful. That is why we also report the full B1–B8 breakdown.</p></div>
-      <div class="why-row"><span class="wn">05</span><p><b>Credibility of the text.</b> Our documents are written to look credible. On informal text, failures shift toward hedging, so our numbers are not deployment estimates.</p></div>
     </div>
   </div>
 </section>
